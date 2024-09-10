@@ -11,8 +11,8 @@ aplayer: true
 {% aplayer
   name="时落叶影"
   artist="Maple暖枫"
-  url="http://m10.music.126.net/20240909151910/38bae139b1d0e3ed9726dbb514d55bac/ymusic/0658/5459/065c/1242e5abe7c37ee08fc4161adce9cd32.mp3"
-  cover="https://p2.music.126.net/jX1php_WEbPe0CI6U3dXFg==/109951164237186640.jpg"
+  url="/assets/sounds/时落叶影.mp3"
+  cover="/assets/images/jpg/时落叶影.jpg"
 %}
 
 
