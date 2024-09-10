@@ -2,7 +2,7 @@
 title: 面试自我介绍
 author: pzc
 date: 2024-6-2
-cover: /hexo-blog/assets/images/jpg/9.jpg
+cover: /assets/images/jpg/9.jpg
 categories: [Interview]
 ---
 ### 版本1：

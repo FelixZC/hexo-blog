@@ -2,7 +2,7 @@
 title: GLSL内置函数
 date: 2024-07-22
 author: "pzc"
-cover: /hexo-blog/assets/images/jpg/10.jpg
+cover: /assets/images/jpg/10.jpg
 categories: [Web3d]
 tags: [Shaders]
 ---

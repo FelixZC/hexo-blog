@@ -1,7 +1,7 @@
 ---
 title: 面试预测
 author: pzc
-cover: /hexo-blog/assets/images/jpg/8.jpg
+cover: /assets/images/jpg/8.jpg
 date: 2024-6-2
 categories: [Interview]
 ---

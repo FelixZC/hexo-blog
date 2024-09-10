@@ -1,7 +1,7 @@
 ---
 title: Everything
 date: 2024-06-16
-cover: /hexo-blog/assets/images/jpg/12.jpg
+cover: /assets/images/jpg/12.jpg
 author: "pzc"
 categories: [Toolkit]
 tags: [Exe]

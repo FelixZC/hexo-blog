@@ -3,7 +3,7 @@ title: 友链
 subtitle: 靓仔靓女
 date: 2014-09-09
 layout: links
-cover: /hexo-blog/assets/images/png/2.png
+cover: /assets/images/png/2.png
 aplayer: true
 ---
 

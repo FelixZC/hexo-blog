@@ -2,7 +2,7 @@
 title: "Book of Shaders"
 date: 2024-06-11
 author: "pzc"
-cover: /hexo-blog/assets/images/jpg/12.jpg
+cover: /assets/images/jpg/12.jpg
 categories: [Web3d]
 tags: [Shaders]
 ---

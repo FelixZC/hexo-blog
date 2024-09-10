@@ -2,7 +2,7 @@
 title: 前端知识体系总结
 author: pzc
 date: 2022-08-22
-cover: /hexo-blog/assets/images/jpg/2.jpg
+cover: /assets/images/jpg/2.jpg
 categories: [JavaScript]
 tags: [Frontend]
 ---
@@ -10,7 +10,7 @@ tags: [Frontend]
 
 [[toc]]
 
-<img src="/hexo-blog/assets/images/svg/frontend.svg" width="100%" height='100%'>
+<img src="/assets/images/svg/frontend.svg" width="100%" height='100%'>
 
 ## ES6 语法
 

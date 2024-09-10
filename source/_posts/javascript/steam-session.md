@@ -2,7 +2,7 @@
 title: "Steam Session"
 date: 2024-06-18
 author: "pzc"
-cover: /hexo-blog/assets/images/jpg/16.jpg
+cover: /assets/images/jpg/16.jpg
 categories: [JavaScript]
 tags: [Steam]
 ---

@@ -2,7 +2,7 @@
 title: js 库和工具推荐
 date: 2024-06-16
 author: "pzc"
-cover: /hexo-blog/assets/images/jpg/13.jpg
+cover: /assets/images/jpg/13.jpg
 categories: [Toolkit]
 tags: [Node.js]
 ---

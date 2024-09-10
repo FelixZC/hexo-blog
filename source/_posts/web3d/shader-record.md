@@ -2,7 +2,7 @@
 title: Shader Record
 date: 2024-06-11
 author: "pzc"
-cover: /hexo-blog/assets/images/jpg/11.jpg
+cover: /assets/images/jpg/11.jpg
 categories: [Web3d]
 tags: [Shaders]
 ---

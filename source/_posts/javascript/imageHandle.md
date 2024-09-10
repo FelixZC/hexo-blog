@@ -2,7 +2,7 @@
 title: "如何选择合适的图像处理库？"
 date: 2024-06-25
 author: "pzc"
-cover: /hexo-blog/assets/images/jpg/14.jpg
+cover: /assets/images/jpg/14.jpg
 categories: [JavaScript]
 tags: [Image]
 ---

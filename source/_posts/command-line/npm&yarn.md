@@ -2,7 +2,7 @@
 title: Npm&Yarn命令行
 author: pzc
 date: 2023-06-02
-cover: /hexo-blog/assets/images/jpg/3.jpg
+cover: /assets/images/jpg/3.jpg
 categories: [CommandLine]
 tags: [Npm]
 ---

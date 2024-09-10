@@ -4,7 +4,7 @@ subtitle: 想了解点什么？
 date: 2024-09-09 09:42:00
 categories:
  - 个人
-cover: /hexo-blog/assets/images/png/11.png
+cover: /assets/images/png/11.png
 aplayer: true
 ---
 

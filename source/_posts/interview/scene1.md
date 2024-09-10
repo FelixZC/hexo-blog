@@ -1,7 +1,7 @@
 ---
 title: 模拟面试1
 author: pzc
-cover: /hexo-blog/assets/images/jpg/7.jpg
+cover: /assets/images/jpg/7.jpg
 date: 2024-6-2
 categories: [Interview]
 ---

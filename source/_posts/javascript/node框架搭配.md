@@ -2,7 +2,7 @@
 title: "Node.js框架搭配"
 date: 2024-09-02
 author: "pzc"
-cover: /hexo-blog/assets/images/jpg/19.jpg
+cover: /assets/images/jpg/19.jpg
 categories: [JavaScript]
 tags: [Node.js]
 ---

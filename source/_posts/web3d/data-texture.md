@@ -2,7 +2,7 @@
 title: THREE.DataTexture的使用
 date: 2024-08-08
 author: "pzc"
-cover: /hexo-blog/assets/images/jpg/17.jpg
+cover: /assets/images/jpg/17.jpg
 categories: [Web3d]
 tags: [Three.js]
 ---

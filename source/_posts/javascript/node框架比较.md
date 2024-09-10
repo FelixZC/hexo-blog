@@ -2,7 +2,7 @@
 title: "Node.js框架比较"
 date: 2024-09-02
 author: "pzc"
-cover: /hexo-blog/assets/images/jpg/18.jpg
+cover: /assets/images/jpg/18.jpg
 categories: [JavaScript]
 tags: [Node.js]
 ---
