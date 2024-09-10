@@ -104,5 +104,6 @@ theme: flexblock
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:<FelixZC>/<hexo-blog>.git, <FelixZC>.github.io
-  branch: main # 或者是gh-pages分支，取决于你的设置
+  repo: https://github.com/<FelixZC>/<FelixZC.github.io>
+  # example, https://github.com/hexojs/hexojs.github.io
+  branch: main
