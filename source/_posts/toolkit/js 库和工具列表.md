@@ -70,7 +70,7 @@ tags: [Node.js]
 #### 用户界面开发
 - **Vue.js**: 渐进式 JavaScript 框架。
 - **React**: 用户界面构建库。
-- **Next.js**: 基于 React 的框架。
+- **Nuxt.js**: 基于 Vue.js 的元框架。
 - **EJS**: HTML 模板引擎。
 - **Handlebars.js**: 扩展的 Mustache 模板引擎。
 - **Sass**: CSS 预处理器。
