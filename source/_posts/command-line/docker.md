@@ -24,4 +24,4 @@ Docker 提供了一系列简洁而强大的命令行工具，使得与 Docker �
 
 8. **docker build**：从 Dockerfile 构建一个新的镜像。例如，`docker build -t my-image .` 会在当前目录下查找 Dockerfile 并创建名为 `my-image` 的镜像。
 
-除了命令行工具，Docker 还提供了一套 RESTful API，允许程序和脚本以编程方式与 Docker daemon 交互，执行与命令行相同的操作，甚至更多。这些 API 可以用于自动化容器和镜像的管理，集成 Docker 到持续集成/持续部署（CI/CD）流程中，或者开发自定义的管理界面。API 接口文档通常可以在 Docker 官方文档中找到，是进行 Docker 自动化管理和集成的重要资源。****
+除了命令行工具，Docker 还提供了一套 RESTful API，允许程序和脚本以编程方式与 Docker daemon 交互，执行与命令行相同的操作，甚至更多。这些 API 可以用于自动化容器和镜像的管理，集成 Docker 到持续集成/持续部署（CI/CD）流程中，或者开发自定义的管理界面。API 接口文档通常可以在 Docker 官方文档中找到，是进行 Docker 自动化管理和集成的重要资源。
