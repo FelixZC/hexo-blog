@@ -3,7 +3,7 @@ title: "Steam Session"
 date: 2024-06-18
 author: "pzc"
 cover: /assets/images/jpg/16.jpg
-categories: [JavaScript]
+categories: [Nodejs]
 tags: [Steam]
 ---
 `steam-session` 和 `steam-user` 是两个 Node.js 库，它们允许开发者与 Steam 社区和 Steam 服务进行交互。使用这两个库，你可以实现多种功能，包括但不限于：
