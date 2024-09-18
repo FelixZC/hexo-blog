@@ -99,7 +99,9 @@ ignore:
 # theme: landscape
 # theme: diaspora
 theme: flexblock
-
+server: 
+  port: 4321
+  host: 127.0.0.1
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
