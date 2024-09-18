@@ -3,7 +3,7 @@ title: "node.js中图像处理库的选择？"
 date: 2024-06-25
 author: "pzc"
 cover: /assets/images/jpg/14.jpg
-categories: [Nodejs]
+categories: [nodejs]
 tags: [Image]
 ---
 ### 选择 Node.js 中的图像处理库

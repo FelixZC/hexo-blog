@@ -3,8 +3,8 @@ title: Linux命令行
 author: pzc
 date: 2023-06-02
 cover: /assets/images/jpg/3.jpg
-categories: [CommandLine]
-tags: [Linux]
+categories: [commandLine]
+tags: [Linux,System,Backend]
 ---
 
 Linux 系统中包含大量命令行工具，它们对于系统管理、文件操作、网络管理以及日常任务自动化等方面至关重要。以下是一些最常用的 Linux 命令及其简要说明：

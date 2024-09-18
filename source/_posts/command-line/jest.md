@@ -3,8 +3,8 @@ title: Jest命令行
 author: pzc
 date: 2023-06-02
 cover: /assets/images/jpg/3.jpg
-categories: [CommandLine]
-tags: [Jest]
+categories: [commandLine]
+tags: [Jest,Test]
 ---
 Jest 是一个流行的 JavaScript 测试框架，广泛用于React及其他前端和Node.js项目中。以下是 Jest 的一些基本命令，这些命令对于开始编写和运行测试非常有用：
 

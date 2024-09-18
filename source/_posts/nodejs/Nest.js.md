@@ -3,8 +3,8 @@ title: "Nestjs相关"
 date: 2024-09-14
 author: "pzc"
 cover: /assets/images/jpg/26.jpg
-categories: [Nodejs]
-tags: [Framework]
+categories: [nodejs]
+tags: [Framework,Backend,Server]
 ---
 Nest.js 是一个基于 Node.js 的渐进式框架，它使用 TypeScript 构建高效、可维护且可扩展的服务器端应用程序。Nest.js 结合了现代 JavaScript 与传统的架构原则（如模块化、依赖注入等），使得开发大型企业级应用变得更加简单。下面是对 Nest.js 的详细解析，旨在帮助您全面了解这一框架。
 

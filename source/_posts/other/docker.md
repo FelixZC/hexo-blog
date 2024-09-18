@@ -3,8 +3,8 @@ title: docker相关
 author: pzc
 date: 2024-09-14
 cover: /assets/images/jpg/25.jpg
-categories: [docker]
-tags: [Backend]
+categories: [other]
+tags: [Docker]
 ---
 ## 介绍
 

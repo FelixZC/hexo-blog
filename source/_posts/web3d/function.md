@@ -3,7 +3,7 @@ title: GLSL内置函数
 date: 2024-07-22
 author: "pzc"
 cover: /assets/images/jpg/10.jpg
-categories: [Web3d]
+categories: [web3d]
 tags: [Shaders]
 ---
 **GLSL**（OpenGL Shading Language）是一种用于编写着色器程序的语言，它允许开发者直接控制图形硬件的渲染过程。GLSL提供了一系列内置函数，用于简化数学和几何计算，以及纹理采样等常见任务。以下是一些主要的GLSL内置函数分类及其描述：

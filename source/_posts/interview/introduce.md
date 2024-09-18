@@ -3,7 +3,7 @@ title: 面试自我介绍
 author: pzc
 date: 2024-6-2
 cover: /assets/images/jpg/9.jpg
-categories: [Interview]
+categories: [interview]
 ---
 ### 版本1：
 

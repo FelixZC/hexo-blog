@@ -3,7 +3,7 @@ title: THREE.DataTexture的使用
 date: 2024-08-08
 author: "pzc"
 cover: /assets/images/jpg/17.jpg
-categories: [Web3d]
+categories: [web3d]
 tags: [Three.js]
 ---
 `THREE.DataTexture`是Three.js图形库中的一个类，用于从原始数据创建纹理。与传统的图像纹理（如通过`THREE.TextureLoader`加载的PNG或JPEG等格式）不同，`DataTexture`允许你直接使用JavaScript数组或TypedArray（如Uint8Array, Float32Array等）中的数据来生成纹理。

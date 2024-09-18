@@ -3,7 +3,7 @@ title: "Book of Shaders"
 date: 2024-06-11
 author: "pzc"
 cover: /assets/images/jpg/12.jpg
-categories: [Web3d]
+categories: [web3d]
 tags: [Shaders]
 ---
 ## 说明

@@ -4,7 +4,7 @@ author: pzc
 date: 2024-09-14
 cover: /assets/images/jpg/24.jpg
 categories: [java]
-tags: [Backend]
+tags: [Backend,Server]
 ---
 ##  Nginx介绍
 

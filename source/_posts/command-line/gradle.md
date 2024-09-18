@@ -3,8 +3,8 @@ title: Gradle命令行
 author: pzc
 date: 2023-06-02
 cover: /assets/images/jpg/3.jpg
-categories: [CommandLine]
-tags: [Gradle]
+categories: [commandLine]
+tags: [Gradle,Package]
 ---
 
 Gradle 是一个基于 Groovy 或 Kotlin 的构建自动化系统，广泛用于Java项目中。下面是Gradle的一些常用命令：

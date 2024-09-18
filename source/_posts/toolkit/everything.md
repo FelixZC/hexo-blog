@@ -3,7 +3,7 @@ title: Everything
 date: 2024-06-16
 cover: /assets/images/jpg/12.jpg
 author: "pzc"
-categories: [Toolkit]
+categories: [toolkit]
 tags: [Exe]
 ---
 "Everything" 是一个由空格软件（VoidTools）开发的文件搜索工具，专为Windows操作系统设计。它能够快速地搜索硬盘上的文件和文件夹，其主要特点是在极短的时间内完成搜索，并且几乎不会对系统资源造成负担。这得益于Everything使用的一种称为“索引”的技术，这种技术使得程序能够在后台建立文件名索引，从而在用户需要搜索时提供即时的结果反馈。

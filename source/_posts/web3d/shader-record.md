@@ -3,7 +3,7 @@ title: Shader Record
 date: 2024-06-11
 author: "pzc"
 cover: /assets/images/jpg/11.jpg
-categories: [Web3d]
+categories: [web3d]
 tags: [Shaders]
 ---
 ### introduce

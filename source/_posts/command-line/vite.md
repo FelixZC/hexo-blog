@@ -3,8 +3,8 @@ title: Vite命令行
 author: pzc
 date: 2023-06-02
 cover: /assets/images/jpg/3.jpg
-categories: [CommandLine]
-tags: [Vite]
+categories: [commandLine]
+tags: [Vite,Server,Package]
 ---
 Vite 是一个由 Vue.js 作者尤雨溪开发的现代前端构建工具，它提供了极快的开发服务器启动速度和更新速度。以下是 Vite 的一些常用命令：
 

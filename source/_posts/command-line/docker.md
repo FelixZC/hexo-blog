@@ -3,8 +3,8 @@ title: Docker命令行
 author: pzc
 date: 2023-06-02
 cover: /assets/images/jpg/3.jpg
-categories: [CommandLine]
-tags: [Docker]
+categories: [commandLine]
+tags: [Docker,Server]
 ---
 Docker 提供了一系列简洁而强大的命令行工具，使得与 Docker 容器和镜像的交互变得非常直观和方便。以下是一些基本的 Docker 命令及其用途：
 

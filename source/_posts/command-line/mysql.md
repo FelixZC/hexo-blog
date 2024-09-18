@@ -3,8 +3,8 @@ title: Mysql命令行
 author: pzc
 date: 2023-06-02
 cover: /assets/images/jpg/3.jpg
-categories: [CommandLine]
-tags: [Mysql]
+categories: [commandLine]
+tags: [Mysql,Database]
 ---
 MySQL是一个广泛使用的开源关系型数据库管理系统。以下是MySQL中一些常用的命令，涵盖数据库和数据表的管理、数据操作以及用户权限管理等方面：
 

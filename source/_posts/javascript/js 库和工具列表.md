@@ -3,8 +3,8 @@ title: js 库和工具推荐
 date: 2024-06-16
 author: "pzc"
 cover: /assets/images/jpg/13.jpg
-categories: [Javascript]
-tags: [package]
+categories: [javaScript]
+tags: [Package]
 ---
 
 一个非常详尽的 js 库和工具列表，涵盖了从Web开发框架到数据库操作、测试、构建自动化、安全性增强等多个方面。为了保持内容的新鲜度和实用性，我们可以将上述内容重新组织，使其更加条理化，并且避免重复。以下是根据您的原始文本重新整理后的分类：

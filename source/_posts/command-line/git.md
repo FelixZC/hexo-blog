@@ -3,8 +3,8 @@ title: Git命令行
 author: pzc
 date: 2023-06-02
 cover: /assets/images/jpg/3.jpg
-categories: [CommandLine]
-tags: [Git]
+categories: [commandLine]
+tags: [Git,Tool]
 ---
 Git 是一个分布式版本控制系统，广泛应用于软件开发中以追踪和控制源代码变更。以下是一些 Git 常用的命令行及其简要说明：
 

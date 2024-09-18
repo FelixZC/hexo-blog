@@ -3,7 +3,7 @@ title: 模拟面试2
 author: pzc
 cover: /assets/images/jpg/7.jpg
 date: 2024-6-2
-categories: [Interview]
+categories: [interview]
 ---
 #### 说明
 以下内容纯属虚构

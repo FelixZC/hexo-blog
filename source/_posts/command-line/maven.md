@@ -3,8 +3,8 @@ title: Maven命令行
 author: pzc
 date: 2023-06-02
 cover: /assets/images/jpg/3.jpg
-categories: [CommandLine]
-tags: [Maven]
+categories: [commandLine]
+tags: [Maven,Backend,Package]
 ---
 Maven 是一个Java项目管理和自动化构建工具，它通过一系列命令（或称为生命周期阶段和目标）来帮助开发者管理项目构建、依赖、文档生成等任务。以下是一些Maven的常用命令：
 

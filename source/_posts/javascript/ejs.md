@@ -3,8 +3,8 @@ title: ejs介绍
 author: pzc
 date: 2024-09-11
 cover: /assets/images/jpg/22.jpg
-categories: [JavaScript]
-tags: [template]
+categories: [javaScript]
+tags: [Template]
 ---
 EJS (Embedded JavaScript Templates) 是一个简单的JavaScript模板引擎，它允许你在 HTML 文件中嵌入 JavaScript 代码以生成动态的内容。EJS 设计得非常灵活，可以用来生成任何格式的数据，不仅仅是 HTML，比如 XML、JSON 等。以下是 EJS 的一些特点：
 

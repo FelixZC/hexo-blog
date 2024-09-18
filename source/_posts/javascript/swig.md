@@ -3,8 +3,8 @@ title: swig介绍
 author: pzc
 date: 2024-09-11
 cover: /assets/images/jpg/21.jpg
-categories: [JavaScript]
-tags: [template]
+categories: [javaScript]
+tags: [Template]
 ---
 ### Swig 模板引擎介绍
 

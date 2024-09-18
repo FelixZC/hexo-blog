@@ -3,8 +3,8 @@ title: Npm&Yarn命令行
 author: pzc
 date: 2023-06-02
 cover: /assets/images/jpg/3.jpg
-categories: [CommandLine]
-tags: [Npm]
+categories: [commandLine]
+tags: [Npm,Yarn,Package]
 ---
 在前端开发中，`npm` 和 `yarn` 是两个广泛使用的包管理和项目依赖管理工具。下面是它们的一些常用命令，这些命令对于日常的开发工作至关重要：
 

@@ -3,8 +3,8 @@ title: Vim命令行
 author: pzc
 date: 2023-06-02
 cover: /assets/images/jpg/3.jpg
-categories: [CommandLine]
-tags: [Vim]
+categories: [commandLine]
+tags: [Vim,Editor]
 ---
 Vim 是一款功能强大的文本编辑器，以其高效和高度可配置性而受到许多程序员的喜爱。以下是 Vim 编辑器中的一些常用命令，分为不同模式进行介绍：
 

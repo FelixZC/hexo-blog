@@ -3,7 +3,7 @@ title: 面试预测
 author: pzc
 cover: /assets/images/jpg/8.jpg
 date: 2024-6-2
-categories: [Interview]
+categories: [interview]
 ---
 ## 预测
 
