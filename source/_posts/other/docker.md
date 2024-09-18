@@ -317,3 +317,97 @@ services:
 
 通过上述方法，您可以有效地管理和优化 Docker 容器的资源使用，确保您的系统稳定运行。
 
+## 配置镜像加速
+配置 Docker 使用镜像加速可以帮助提高从 Docker Hub 拉取镜像的速度，尤其是在网络条件不佳的情况下。以下是如何配置 Docker 使用国内镜像加速器的方法：
+
+### Windows 和 macOS
+
+#### 1. 打开 Docker Desktop
+- 启动 Docker Desktop。
+
+#### 2. 进入设置
+- 点击右上角的齿轮图标进入设置。
+- 选择 `Docker Engine` 选项卡。
+
+#### 3. 编辑 `Docker Engine` 配置
+- 在 `Docker Engine` 配置窗口中，找到 `registry-mirrors` 部分，并添加一个或多个镜像加速器地址。例如，使用阿里云的镜像加速器：
+  ```json
+  {
+    "registry-mirrors": ["https://<你的加速器地址>.mirror.aliyuncs.com"]
+  }
+  ```
+
+- 点击 `Apply & Restart` 应用更改并重启 Docker。
+
+### Linux
+
+#### 1. 编辑或创建 `daemon.json` 文件
+- 打开终端，编辑或创建 `/etc/docker/daemon.json` 文件：
+  ```sh
+  sudo nano /etc/docker/daemon.json
+  ```
+
+#### 2. 添加镜像加速器配置
+- 在文件中添加 `registry-mirrors` 配置，例如：
+  ```json
+  {
+    "registry-mirrors": ["https://<你的加速器地址>.mirror.aliyuncs.com"]
+  }
+  ```
+
+- 保存并关闭文件。
+
+#### 3. 重启 Docker 服务
+- 重启 Docker 服务以应用更改：
+  ```sh
+  sudo systemctl restart docker
+  ```
+
+### 常见的镜像加速器
+
+- **阿里云**：注册后可以获得专属的加速器地址，例如 `https://<你的加速器地址>.mirror.aliyuncs.com`。
+- **腾讯云**：提供公共镜像加速器 `https://mirrors.cloud.tencent.com/docker/`。
+- **网易**：提供公共镜像加速器 `https://hub-mirror.c.163.com`。
+- **DaoCloud**：提供公共镜像加速器 `https://mirrors.daocloud.io`。
+
+### 验证配置
+
+- 你可以通过运行以下命令来验证镜像加速器是否生效：
+  ```sh
+  docker info
+  ```
+  查看输出中的 `Registry Mirrors` 部分，确认加速器地址已经添加。
+
+### 示例
+
+假设你使用镜像加速器，你的 `daemon.json` 文件内容可能如下所示：
+
+```json
+{
+  "builder": {
+    "gc": {
+      "defaultKeepStorage": "20GB",
+      "enabled": true
+    }
+  },
+  "experimental": false,
+  "registry-mirrors": [
+    "https://docker.registry.cyou",
+    "https://docker-cf.registry.cyou",
+    "https://dockercf.jsdelivr.fyi",
+    "https://docker.jsdelivr.fyi",
+    "https://dockertest.jsdelivr.fyi",
+    "https://mirror.aliyuncs.com",
+    "https://dockerproxy.com",
+    "https://mirror.baidubce.com",
+    "https://docker.m.daocloud.io",
+    "https://docker.nju.edu.cn",
+    "https://docker.mirrors.sjtug.sjtu.edu.cn",
+    "https://docker.mirrors.ustc.edu.cn",
+    "https://mirror.iscas.ac.cn",
+    "https://docker.rainbond.cc"
+  ]
+}
+```
+
+希望这些步骤能帮助你成功配置 Docker 镜像加速。
