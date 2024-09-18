@@ -6,66 +6,230 @@ cover: /assets/images/jpg/3.jpg
 categories: [commandLine]
 tags: [Vite,Server,Package]
 ---
-Vite 是一个由 Vue.js 作者尤雨溪开发的现代前端构建工具，它提供了极快的开发服务器启动速度和更新速度。以下是 Vite 的一些常用命令：
+Vite 是一个由 Vue.js 作者尤雨溪开发的现代前端构建工具，它利用原生 ES 模块导入来提供更快的开发服务器启动时间和更快的热更新。以下是 Vite 的一些常用命令，可以帮助你管理和运行项目。
 
-1. **安装Vite**
-   ```bash
-   npm install vite --save-dev
-   ```
-   或
-   ```bash
-   yarn add vite --dev
-   ```
-   将Vite添加为项目的开发依赖。
+### 基础命令
 
-2. **创建Vite项目**
-   使用Vite CLI创建一个新的项目：
-   ```bash
-   npm create vite@latest my-vite-project
-   ```
-   或
-   ```bash
-   yarn create vite my-vite-project
-   ```
-   这将引导你选择模板并初始化项目。
+- **安装 Vite**
+  - 使用 npm：
+    ```sh
+    npm install -g create-vite
+    ```
+  - 使用 yarn：
+    ```sh
+    yarn global add create-vite
+    ```
 
-3. **启动开发服务器**
-   在项目根目录下运行：
-   ```bash
-   npm run dev
-   ```
-   或
-   ```bash
-   yarn dev
-   ```
-   这将启动一个热更新的开发服务器。
+- **创建新项目**
+  - 使用 npm：
+    ```sh
+    npm create vite@latest my-vue-app --template vue
+    ```
+  - 使用 yarn：
+    ```sh
+    yarn create vite my-vue-app --template vue
+    ```
 
-4. **构建生产版本**
-   构建项目用于生产环境：
-   ```bash
-   npm run build
-   ```
-   或
-   ```bash
-   yarn build
-   ```
-   这将对项目进行优化并打包静态资源到`dist`目录。
+  可用的模板包括：
+  - `vue`：Vue 3 单文件组件 (SFC) 项目
+  - `react`：React 项目
+  - `preact`：Preact 项目
+  - `vanilla`：纯 JavaScript 项目
+  - `vanilla-ts`：纯 TypeScript 项目
 
-5. **预览生产构建**
-   在构建之后，可以使用此命令预览生产构建的效果：
-   ```bash
-   npm run preview
-   ```
-   或
-   ```bash
-   yarn preview
-   ```
-   这会在本地开启一个服务器来serve `dist`目录的内容。
+### 项目管理
 
-6. **查看帮助**
-   如果想查看Vite CLI的所有可用命令及其选项，可以运行：
-   ```bash
-   vite --help
-   ```
+- **安装项目依赖**
+  - 使用 npm：
+    ```sh
+    cd my-vue-app
+    npm install
+    ```
+  - 使用 yarn：
+    ```sh
+    cd my-vue-app
+    yarn
+    ```
 
-请注意，具体的命令可能会根据Vite的版本更新而有所变化，建议参考Vite的官方文档获取最新信息。
+- **启动开发服务器**
+  - 使用 npm：
+    ```sh
+    npm run dev
+    ```
+  - 使用 yarn：
+    ```sh
+    yarn dev
+    ```
+
+  这将启动 Vite 开发服务器，并在浏览器中打开项目。
+
+### 构建和部署
+
+- **构建项目**
+  - 使用 npm：
+    ```sh
+    npm run build
+    ```
+  - 使用 yarn：
+    ```sh
+    yarn build
+    ```
+
+  这将生成生产环境的静态文件，通常位于 `dist/` 目录下。
+
+- **预览构建结果**
+  - 使用 npm：
+    ```sh
+    npm run preview
+    ```
+  - 使用 yarn：
+    ```sh
+    yarn preview
+    ```
+
+  这将启动一个本地服务器来预览构建结果，方便在部署前进行检查。
+
+### 配置
+
+- **编辑配置文件**
+  - Vite 的配置文件通常是 `vite.config.js` 或 `vite.config.ts`。你可以在这个文件中配置各种选项，如别名、代理、插件等。
+
+  示例配置文件：
+  ```js
+  // vite.config.js
+  import { defineConfig } from 'vite';
+  import vue from '@vitejs/plugin-vue';
+
+  export default defineConfig({
+    plugins: [vue()],
+    server: {
+      port: 3000,
+      open: true,
+      proxy: {
+        '/api': 'http://localhost:3001',
+      },
+    },
+    resolve: {
+      alias: {
+        '@': '/src',
+      },
+    },
+  });
+  ```
+
+### 插件管理
+
+- **安装插件**
+  - 使用 npm：
+    ```sh
+    npm install @vitejs/plugin-vue
+    ```
+  - 使用 yarn：
+    ```sh
+    yarn add @vitejs/plugin-vue
+    ```
+
+  在 `vite.config.js` 中使用插件：
+  ```js
+  import { defineConfig } from 'vite';
+  import vue from '@vitejs/plugin-vue';
+
+  export default defineConfig({
+    plugins: [vue()],
+  });
+  ```
+
+### 调试和日志
+
+- **查看详细日志**
+  - 启动开发服务器时，Vite 会显示详细的日志信息。如果需要更多调试信息，可以在 `vite.config.js` 中配置日志级别：
+  ```js
+  import { defineConfig } from 'vite';
+
+  export default defineConfig({
+    server: {
+      logLevel: 'info', // 可选值：'silent', 'error', 'warn', 'info', 'debug'
+    },
+  });
+  ```
+
+### 其他实用命令
+
+- **生成类型定义文件**
+  - 如果你在使用 TypeScript，可以生成类型定义文件：
+  ```sh
+  npx tsc --init
+  ```
+
+- **运行自定义脚本**
+  - 你可以在 `package.json` 中定义自定义脚本：
+  ```json
+  {
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "preview": "vite preview",
+      "lint": "eslint ."
+    }
+  }
+  ```
+
+  运行自定义脚本：
+  ```sh
+  npm run lint
+  ```
+
+### 示例
+
+假设你有一个名为 `my-vue-app` 的 Vite 项目，你可以使用以下命令来管理和运行项目：
+
+- **创建新项目**
+  ```sh
+  npm create vite@latest my-vue-app --template vue
+  ```
+
+- **安装项目依赖**
+  ```sh
+  cd my-vue-app
+  npm install
+  ```
+
+- **启动开发服务器**
+  ```sh
+  npm run dev
+  ```
+
+- **构建项目**
+  ```sh
+  npm run build
+  ```
+
+- **预览构建结果**
+  ```sh
+  npm run preview
+  ```
+
+- **编辑配置文件**
+  ```js
+  // vite.config.js
+  import { defineConfig } from 'vite';
+  import vue from '@vitejs/plugin-vue';
+
+  export default defineConfig({
+    plugins: [vue()],
+    server: {
+      port: 3000,
+      open: true,
+      proxy: {
+        '/api': 'http://localhost:3001',
+      },
+    },
+    resolve: {
+      alias: {
+        '@': '/src',
+      },
+    },
+  });
+  ```
+
+这些命令涵盖了 Vite 的大多数常用功能。

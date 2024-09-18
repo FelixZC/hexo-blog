@@ -6,22 +6,72 @@ cover: /assets/images/jpg/3.jpg
 categories: [commandLine]
 tags: [Docker,Server]
 ---
-Docker 提供了一系列简洁而强大的命令行工具，使得与 Docker 容器和镜像的交互变得非常直观和方便。以下是一些基本的 Docker 命令及其用途：
+Docker 是一个开源的应用容器引擎，可以让开发者打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器或 Windows 机器上，也可以实现虚拟化。下面是一些常用的 Docker 命令，可以帮助你管理和操作 Docker 容器及镜像：
 
-1. **docker run**：这个命令用于从镜像创建并启动一个新的容器。你可以通过这个命令指定容器要运行的命令、工作目录、环境变量、端口映射等。
+### 基础命令
 
-2. **docker pull**：用于从 Docker 仓库中拉取镜像到本地。例如，`docker pull ubuntu` 会下载 Ubuntu 的官方镜像。
+- **获取帮助**
+  - `docker --help`：显示 Docker 的所有可用命令。
+  - `docker [command] --help`：显示特定命令的帮助信息。
 
-3. **docker images**：列出本地所有的 Docker 镜像。
+- **版本信息**
+  - `docker version`：显示 Docker 版本信息。
 
-4. **docker ps**：列出正在运行的容器。使用 `-a` 参数可以查看所有容器（包括停止的）。
+### 镜像管理
 
-5. **docker stop**：停止一个运行中的容器，需要指定容器ID或名称。
+- **搜索镜像**
+  - `docker search [image-name]`：在 Docker Hub 搜索镜像。
 
-6. **docker rm**：删除一个或多个容器。通常与 `-f`（强制删除）和 `docker ps -a -q`（获取所有容器ID）结合使用以删除所有停止的容器。
+- **下载镜像**
+  - `docker pull [image-name]`：从仓库下载镜像到本地。
 
-7. **docker rmi**：删除一个或多个镜像。
+- **列出镜像**
+  - `docker images`：列出本地已有的镜像。
 
-8. **docker build**：从 Dockerfile 构建一个新的镜像。例如，`docker build -t my-image .` 会在当前目录下查找 Dockerfile 并创建名为 `my-image` 的镜像。
+- **构建镜像**
+  - `docker build -t [tag-name] .`：使用 Dockerfile 构建镜像，`.` 表示 Dockerfile 在当前目录下。
 
-除了命令行工具，Docker 还提供了一套 RESTful API，允许程序和脚本以编程方式与 Docker daemon 交互，执行与命令行相同的操作，甚至更多。这些 API 可以用于自动化容器和镜像的管理，集成 Docker 到持续集成/持续部署（CI/CD）流程中，或者开发自定义的管理界面。API 接口文档通常可以在 Docker 官方文档中找到，是进行 Docker 自动化管理和集成的重要资源。
+- **删除镜像**
+  - `docker rmi [image-id]`：删除本地指定的镜像。
+  - `docker rmi $(docker images -q)`：删除所有本地镜像。
+
+### 容器管理
+
+- **运行容器**
+  - `docker run -d -p [host-port]:[container-port] [image-name]`：以后台模式运行容器，并映射端口。
+  - `docker run -it [image-name] /bin/bash`：以交互模式运行容器，并启动 bash。
+
+- **列出容器**
+  - `docker ps`：列出所有正在运行的容器。
+  - `docker ps -a`：列出所有容器，包括停止的。
+
+- **停止/启动/重启容器**
+  - `docker stop [container-id]`：停止一个运行中的容器。
+  - `docker start [container-id]`：启动一个已停止的容器。
+  - `docker restart [container-id]`：重启容器。
+
+- **删除容器**
+  - `docker rm [container-id]`：删除一个或多个容器。
+  - `docker rm $(docker ps -a -q)`：删除所有容器。
+
+- **查看容器日志**
+  - `docker logs [container-id]`：查看容器的日志输出。
+
+- **执行命令**
+  - `docker exec -it [container-id] /bin/bash`：在运行中的容器内执行命令。
+
+### 其他常用命令
+
+- **导出容器为 tar 文件**
+  - `docker export [container-id] > container.tar`：将容器导出为 tar 文件。
+
+- **导入 tar 文件为镜像**
+  - `cat container.tar | docker import - [image-name]`：从 tar 文件导入镜像。
+
+- **查看系统信息**
+  - `docker info`：显示 Docker 系统的信息，包括使用的存储驱动等。
+
+- **清理未使用的资源**
+  - `docker system prune`：清理所有未使用的容器、网络、镜像（包括未被任何标签引用的悬空镜像）。
+
+这些命令覆盖了 Docker 日常使用中的大多数场景，但 Docker 功能强大，还有许多高级特性和配置选项可以探索。
