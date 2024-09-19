@@ -83,8 +83,6 @@ Nest.js 可以用于多种类型的 Web 应用程序开发：
 
 ### 开发实践
 
-Nest.js 提倡良好的编码习惯和最佳实践，帮助开发者写出高质量的代码。
-
 #### 代码组织
 
 - **文件结构**: 通常按照功能或领域模型来组织代码，每个模块有自己的文件夹，包含控制器、服务、模型等。
@@ -95,6 +93,84 @@ Nest.js 提倡良好的编码习惯和最佳实践，帮助开发者写出高质
 - **单元测试**: 对于每一个服务、控制器、提供者都应该编写单元测试。
 - **集成测试**: 对于整个模块或应用程序进行集成测试，确保各个部分协同工作。
 - **端到端测试**: 模拟真实用户行为，测试整个应用程序的工作流。
+
+###  NestJS CLI 
+
+NestJS CLI (Command Line Interface) 是一个强大的命令行工具，专为 NestJS 框架设计，旨在简化 NestJS 应用程序的创建、管理和开发过程。通过使用 NestJS CLI，开发者可以快速地生成新的项目、模块、服务、控制器等，而无需手动编写大量的模板代码。此外，CLI 还提供了许多其他功能，如启动开发服务器、构建生产环境的应用程序等。以下是一些主要特性和使用方法的介绍：
+
+#### 安装
+
+首先，你需要安装 NestJS CLI。可以通过 npm 全局安装：
+
+```bash
+npm install -g @nestjs/cli
+```
+
+#### 创建新项目
+
+安装完成后，你可以使用 `nest new` 命令来创建一个新的 NestJS 项目：
+
+```bash
+nest new project-name
+```
+
+这将引导你完成一系列选择，比如选择包管理器（npm 或 yarn），是否需要安装 ESLint 等。完成后，CLI 会自动下载必要的依赖并初始化项目结构。
+
+#### 生成模块、服务、控制器等
+
+在项目中，你可以轻松地生成新的模块、服务、控制器、守卫、管道、中间件等。例如，要生成一个新的控制器，可以使用：
+
+```bash
+nest generate controller cats
+```
+
+这将在 `src/cats` 目录下创建一个名为 `cats.controller.ts` 的文件，并自动导入必要的模块。类似的命令有：
+
+- `nest generate service cats`：生成服务。
+- `nest generate module cats`：生成模块。
+- `nest generate guard cats`：生成守卫。
+- `nest generate pipe cats`：生成管道。
+- `nest generate middleware cats`：生成中间件。
+- `nest generate filter cats`：生成异常过滤器。
+
+#### 开发服务器
+
+要启动开发服务器，可以使用以下命令：
+
+```bash
+nest start
+```
+
+默认情况下，这将启动一个热重载的开发服务器。如果你想要在监视模式下启动（即文件更改时自动重启），可以使用：
+
+```bash
+nest start --watch
+```
+
+#### 构建生产环境应用
+
+为了构建一个优化过的生产环境应用，可以使用：
+
+```bash
+nest build
+```
+
+这将根据你的配置文件（通常是 `tsconfig.json` 和 `nest-cli.json`）编译 TypeScript 代码，生成 JavaScript 文件，并准备好部署。
+
+#### 其他常用命令
+
+- `nest help`：显示帮助信息，列出所有可用的命令。
+- `nest version`：显示已安装的 NestJS CLI 版本。
+- `nest update`：更新 NestJS CLI 和相关依赖到最新版本。
+
+#### 配置文件
+
+NestJS CLI 使用 `nest-cli.json` 文件来配置项目的构建和其他设置。此文件通常位于项目的根目录中，包含了关于源代码位置、编译选项、插件等的信息。
+
+#### 插件支持
+
+NestJS CLI 支持插件，这使得开发者可以根据需要扩展其功能。例如 `@nestjs/swagger` 插件就是用来生成 API 文档的。你可以通过在 `nest-cli.json` 中配置插件来启用它们。
+
 
 ### 最佳实践
 
