@@ -1,5 +1,5 @@
 ---
-title: ejs介绍
+title: ejs
 author: pzc
 date: 2024-09-11
 cover: /assets/images/jpg/22.jpg

@@ -1,5 +1,5 @@
 ---
-title: Nginx相关
+title: Nginx
 author: pzc
 date: 2024-09-14
 cover: /assets/images/jpg/24.jpg

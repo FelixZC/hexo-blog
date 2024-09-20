@@ -1,5 +1,5 @@
 ---
-title: bash相关
+title: bash
 author: pzc
 date: 2024-09-14
 cover: /assets/images/jpg/29.jpg

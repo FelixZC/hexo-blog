@@ -1,5 +1,5 @@
 ---
-title: "Nestjs相关"
+title: "Nestjs"
 date: 2024-09-14
 author: "pzc"
 cover: /assets/images/jpg/26.jpg

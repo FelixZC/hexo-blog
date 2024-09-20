@@ -1,5 +1,5 @@
 ---
-title: swig介绍
+title: swig
 author: pzc
 date: 2024-09-11
 cover: /assets/images/jpg/21.jpg

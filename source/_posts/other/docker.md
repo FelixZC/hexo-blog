@@ -1,5 +1,5 @@
 ---
-title: docker相关
+title: docker
 author: pzc
 date: 2024-09-14
 cover: /assets/images/jpg/25.jpg

@@ -1,5 +1,5 @@
 ---
-title: "TypeORM介绍"
+title: "TypeORM"
 date: 2024-09-19
 author: "pzc"
 cover: /assets/images/jpg/28.jpg
