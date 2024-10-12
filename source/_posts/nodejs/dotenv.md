@@ -4,7 +4,7 @@ author: pzc
 date: 2024-09-20
 cover: /assets/images/jpg/31.jpg
 categories: [nodejs]
-tags: [env]
+tags: [Env]
 ---
 
 `dotenv` 是一个用于Node.js的零依赖模块，它可以帮助开发者轻松地加载环境变量到进程环境中。通常这些环境变量存储在一个名为 `.env` 的文件中，这个文件不会被提交到版本控制系统（如Git）中，以避免敏感信息泄露。这种方式在开发和部署应用时非常有用，因为它允许开发者为不同的环境设置不同的配置，而无需更改代码。
