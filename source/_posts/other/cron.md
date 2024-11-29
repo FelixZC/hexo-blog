@@ -4,7 +4,7 @@ author: pzc
 date: 2024-09-20
 cover: /assets/images/jpg/30.jpg
 categories: [other]
-tags: [linux,mac]
+tags: [Linux,Mac]
 ---
 Cron 是一种在 Unix、Linux 和 macOS 等操作系统上用于调度任务的工具。它允许用户设定定时执行的任务，比如定期备份数据库、清理临时文件、发送邮件提醒等。Cron 任务通常被称为 "cron jobs"。
 

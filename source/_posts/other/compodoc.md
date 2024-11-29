@@ -4,7 +4,7 @@ author: pzc
 date: 2024-09-23
 cover: /assets/images/jpg/35.jpg
 categories: [other]
-tags: [doc]
+tags: [Doc]
 ---
 Compodoc 是一个用于 Angular、Vue 和 React 应用程序的文档生成工具。它能够帮助开发者快速地为他们的项目生成详细的 API 文档，包括组件、服务、指令等各个方面的信息。通过使用 Compodoc，团队可以更容易地维护代码和促进新成员对项目的理解。
 

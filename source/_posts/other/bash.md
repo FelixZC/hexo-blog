@@ -4,7 +4,7 @@ author: pzc
 date: 2024-09-14
 cover: /assets/images/jpg/29.jpg
 categories: [other]
-tags: [bash,linux,mac]
+tags: [Bash,Linux,Mac]
 ---
 Bash（Bourne Again SHell）是一种广泛使用的命令行解释器（shell），主要用于 Unix 和类 Unix 操作系统（如 Linux 和 macOS）。Bash 是 Bourne Shell（sh）的扩展版本，由 Brian Fox 于 1989 年为 GNU 项目编写。Bash 不仅可以用作交互式的命令行界面，还可以用于编写脚本，以自动化各种任务。
 

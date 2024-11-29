@@ -4,7 +4,7 @@ author: pzc
 date: 2024-09-14
 cover: /assets/images/jpg/32.jpg
 categories: [other]
-tags: [bash,linux,mac]
+tags: [Bash,Linux,Mac]
 ---
 在使用 Git 时，如果你从一个对文件名大小写不敏感的文件系统（如 Windows 或 macOS 的默认文件系统）切换到一个大小写敏感的文件系统（如 Linux），可能会遇到文件名大小写的问题。这是因为 Git 在这些不同的文件系统上可能无法正确识别文件名大小写的更改。
 
