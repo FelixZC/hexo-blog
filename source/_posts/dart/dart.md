@@ -30,6 +30,35 @@ Dart 是一种由 Google 开发的客户端优化的编程语言，用于构建 
 - **活跃的社区**：Dart 拥有一个快速增长的开发者社区，提供大量的教程、文档和支持。
 - **Flutter**：作为 Flutter 的主要编程语言，Dart 得到了极大的推动，Flutter 是一个非常受欢迎的 UI 工具包，用于开发跨平台应用。
 
+### 生态系统和资源
+
+  #### 1. 官方文档
+
+  - **Dart 官方文档**：[Dart 官方文档](https://dart.dev/guides) 提供了详细的语言指南和 API 文档。
+  - **Flutter 官方文档**：[Flutter 官方文档](https://flutter.dev/docs) 提供了 Flutter 框架的详细说明和示例。
+
+  #### 2. 社区资源
+
+  - **Dart 官方论坛**：[Dart 官方论坛](https://groups.google.com/g/dart-lang-discuss) 用于提问和讨论。
+  - **Stack Overflow**：[Stack Overflow](https://stackoverflow.com/questions/tagged/dart) 上有大量的 Dart 和 Flutter 相关问题和答案。
+  - **GitHub**：[Dart GitHub 组织](https://github.com/dart-lang) 和 [Flutter GitHub 组织](https://github.com/flutter) 包含了许多开源项目和库。
+
+  #### 3. 在线学习
+
+  - **DartPad**：[DartPad](https://dartpad.dev/) 是一个在线 Dart 编程环境，适合初学者。
+  - **Codelabs**：[Dart Codelabs](https://codelabs.developers.google.com/?cat=Dart) 和 [Flutter Codelabs](https://flutter.dev/docs/get-started/codelab) 提供了官方的互动式教程。
+
+  #### 4. 博客和文章
+
+  - **Medium**：[Dart 和 Flutter 的 Medium 标签](https://medium.com/tag/dart) 上有许多开发者分享的经验和技巧。
+  - **Dev.to**：[Dart 和 Flutter 的 Dev.to 标签](https://dev.to/t/dart) 上也有许多高质量的文章和教程。
+
+  #### 5. 开源项目
+
+  - **Awesome Dart**：[Awesome Dart](https://github.com/yissachar/awesome-dart) 是一个收集了大量 Dart 资源和项目的列表。
+  - **Awesome Flutter**：[Awesome Flutter](https://github.com/Solido/awesome-flutter) 是一个收集了大量 Flutter 资源和项目的列表。
+
+
 ### 应用场景
 - **Web 开发**：Dart 可以用来构建现代 Web 应用程序，编译为 JavaScript 以在任何浏览器中运行。
 - **移动应用开发**：与 Flutter 结合，Dart 是开发高效、美观的跨平台移动应用的理想选择。
@@ -109,40 +138,8 @@ Dart 2.12 引入了空安全（null safety），确保变量在使用前必须�
 - **移动应用**：使用 Flutter 构建跨平台移动应用。
 - **桌面应用**：使用 Flutter 构建 Windows、macOS 和 Linux 桌面应用。
 
-- 当然，下面是带有链接的生态系统和资源部分，方便你快速访问相关资源：
 
-  ### 生态系统和资源
-
-  #### 1. 官方文档
-
-  - **Dart 官方文档**：[Dart 官方文档](https://dart.dev/guides) 提供了详细的语言指南和 API 文档。
-  - **Flutter 官方文档**：[Flutter 官方文档](https://flutter.dev/docs) 提供了 Flutter 框架的详细说明和示例。
-
-  #### 2. 社区资源
-
-  - **Dart 官方论坛**：[Dart 官方论坛](https://groups.google.com/g/dart-lang-discuss) 用于提问和讨论。
-  - **Stack Overflow**：[Stack Overflow](https://stackoverflow.com/questions/tagged/dart) 上有大量的 Dart 和 Flutter 相关问题和答案。
-  - **GitHub**：[Dart GitHub 组织](https://github.com/dart-lang) 和 [Flutter GitHub 组织](https://github.com/flutter) 包含了许多开源项目和库。
-
-  #### 3. 在线学习
-
-  - **DartPad**：[DartPad](https://dartpad.dev/) 是一个在线 Dart 编程环境，适合初学者。
-  - **Codelabs**：[Dart Codelabs](https://codelabs.developers.google.com/?cat=Dart) 和 [Flutter Codelabs](https://flutter.dev/docs/get-started/codelab) 提供了官方的互动式教程。
-
-  ### 其他资源
-
-  #### 4. 博客和文章
-
-  - **Medium**：[Dart 和 Flutter 的 Medium 标签](https://medium.com/tag/dart) 上有许多开发者分享的经验和技巧。
-  - **Dev.to**：[Dart 和 Flutter 的 Dev.to 标签](https://dev.to/t/dart) 上也有许多高质量的文章和教程。
-
-  #### 5. 开源项目
-
-  - **Awesome Dart**：[Awesome Dart](https://github.com/yissachar/awesome-dart) 是一个收集了大量 Dart 资源和项目的列表。
-  - **Awesome Flutter**：[Awesome Flutter](https://github.com/Solido/awesome-flutter) 是一个收集了大量 Flutter 资源和项目的列表。
-
-
-### 进一步补充
+### 补充
 
 #### 1. 性能优化
 
