@@ -1895,3 +1895,39 @@ ThrottlerModule.forRoot({
 ```
 
 这样就可以使用 Redis 来管理速率限制了。根据你的需求，你可能需要调整配置或者添加额外的功能。官方文档提供了更多详细信息和支持。
+
+## @nestjs/schematics
+`@nestjs/schematics` 是 NestJS 框架提供的一个工具包，用于通过 Angular CLI 风格的命令行接口生成和管理 NestJS 项目结构。Schematics 允许开发者快速创建模块、控制器、服务（提供者）、中间件、守卫、管道、拦截器等 NestJS 组件，而无需手动编写样板代码。
+
+使用 `@nestjs/schematics` 可以帮助开发者更高效地开发应用程序，因为它减少了重复性工作，并且确保了新创建的组件遵循一致的代码风格和结构。
+
+要使用 `@nestjs/schematics`，你通常需要先安装它。如果你还没有安装 NestCLI，可以通过 npm 安装：
+
+```bash
+npm install -g @nestjs/cli
+```
+
+一旦安装了 NestCLI，你可以用它来初始化新的 NestJS 项目或者向现有项目添加新的功能模块。例如，创建一个新的 NestJS 应用程序可以这样：
+
+```bash
+nest new project-name
+```
+
+然后，你可以使用以下命令来生成不同的 NestJS 组件：
+
+- 创建一个模块：
+  ```bash
+  nest generate module module-name
+  ```
+- 创建一个控制器：
+  ```bash
+  nest generate controller controller-name
+  ```
+- 创建一个服务/提供者：
+  ```bash
+  nest generate service service-name
+  ```
+
+这些命令会自动更新项目的架构并注入必要的导入语句，从而保持代码的整洁和有序。
+
+请注意，`@nestjs/schematics` 和 `@nestjs/cli` 工具会不断更新，因此建议查阅官方文档以获取最新信息和最佳实践。
