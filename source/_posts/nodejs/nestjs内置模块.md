@@ -1931,3 +1931,311 @@ nest new project-name
 这些命令会自动更新项目的架构并注入必要的导入语句，从而保持代码的整洁和有序。
 
 请注意，`@nestjs/schematics` 和 `@nestjs/cli` 工具会不断更新，因此建议查阅官方文档以获取最新信息和最佳实践。
+
+## @nestjs/terminus
+`@nestjs/terminus` 是一个为 NestJS 应用程序提供的健康检查模块，它帮助开发者监控应用程序的健康状态。通过 `@nestjs/terminus`，你可以轻松地设置和管理各种健康检查端点（health check endpoints），这些端点可以被外部服务（如负载均衡器、容器编排工具等）用来确定你的应用是否正常运行。
+
+以下是使用 `@nestjs/terminus` 的一些基本步骤：
+
+### 安装
+
+首先，你需要安装 `@nestjs/terminus` 包：
+
+```bash
+npm install @nestjs/terminus
+```
+
+或者如果你使用的是 Yarn：
+
+```bash
+yarn add @nestjs/terminus
+```
+
+### 创建健康检查控制器
+
+然后，在你的 NestJS 项目中创建一个新的控制器来处理健康检查请求。通常你会想要创建一个专门的健康检查模块和控制器。
+
+```typescript
+import { Controller, Get } from '@nestjs/common';
+import { HealthCheckService, HealthCheck } from '@nestjs/terminus';
+
+@Controller('health')
+export class HealthController {
+  constructor(private health: HealthCheckService) {}
+
+  @Get()
+  @HealthCheck()
+  check() {
+    // 这里可以添加更多的健康检查函数
+    return this.health.check([
+      () => this.health.pingCheck('database', 'http://localhost:5432'),
+      // 其他健康检查...
+    ]);
+  }
+}
+```
+
+### 配置应用
+
+确保在你的主应用模块（通常是 `AppModule`）中导入 `TerminusModule`：
+
+```typescript
+import { Module } from '@nestjs/common';
+import { TerminusModule } from '@nestjs/terminus';
+import { HealthController } from './health.controller';
+
+@Module({
+  imports: [TerminusModule],
+  controllers: [HealthController],
+})
+export class AppModule {}
+```
+
+### 自定义健康检查
+
+你可以根据需要自定义健康检查逻辑。例如，你可以添加数据库连接检查、Redis连接检查等。`@nestjs/terminus` 提供了一些内置的健康检查功能，并且也支持你编写自己的健康检查逻辑。
+
+### 使用场景
+
+- **Kubernetes**：Kubernetes 可以配置 liveness 和 readiness 探针来定期调用健康检查端点，以判断容器是否应该继续运行或接受流量。
+- **负载均衡器**：健康检查可以用于告诉负载均衡器哪些实例是健康的，应该接收流量。
+- **持续集成/持续部署 (CI/CD)**：在部署过程中，健康检查可以帮助确认新版本的应用已经成功启动并且可以正常工作。
+
+`@nestjs/terminus` 是构建可靠、可维护的服务的一个重要工具，特别是在微服务架构中，健康检查对于保持系统的稳定性和可靠性至关重要。
+
+## @nestjs/event-emitter
+`@nestjs/event-emitter` 是 NestJS 框架提供的一个用于事件驱动架构的模块，它简化了在应用程序中实现发布-订阅模式的过程。通过使用 `EventEmitter2` 库，`@nestjs/event-emitter` 使开发者能够在服务之间解耦合的同时，通过事件来协调和通信。
+
+以下是关于如何使用 `@nestjs/event-emitter` 的一些基本指导：
+
+### 安装
+
+首先，你需要安装 `@nestjs/event-emitter` 包：
+
+```bash
+npm install @nestjs/event-emitter
+```
+
+或者如果你使用的是 Yarn：
+
+```bash
+yarn add @nestjs/event-emitter
+```
+
+### 配置应用
+
+接下来，在你的主应用模块（通常是 `AppModule`）中导入 `EventEmitterModule`：
+
+```typescript
+import { Module } from '@nestjs/common';
+import { EventEmitterModule } from '@nestjs/event-emitter';
+
+@Module({
+  imports: [
+    EventEmitterModule.forRoot(), // 初始化事件发射器
+  ],
+})
+export class AppModule {}
+```
+
+### 发布事件
+
+你可以在任何服务、控制器或守卫中通过注入 `EventEmitter2` 来发布事件：
+
+```typescript
+import { Injectable, Inject } from '@nestjs/common';
+import { EventEmitter2 } from '@nestjs/event-emitter';
+
+@Injectable()
+export class OrdersService {
+  constructor(@Inject(EventEmitter2) private eventEmitter: EventEmitter2) {}
+
+  async createOrder(orderData: any) {
+    // 创建订单的逻辑...
+    
+    // 发布创建订单成功的事件
+    this.eventEmitter.emit('order.created', { order: orderData });
+  }
+}
+```
+
+### 监听事件
+
+你可以监听特定事件，并在事件触发时执行相应的逻辑。这通常是在服务类中完成的，通过装饰器 `@OnEvent` 来定义事件处理器：
+
+```typescript
+import { Injectable, OnEvent } from '@nestjs/common';
+
+@Injectable()
+export class OrderEventsService {
+  @OnEvent('order.created')
+  handleOrderCreatedEvent(event: any) {
+    console.log(`Order created with data: ${JSON.stringify(event.order)}`);
+    // 执行其他业务逻辑，例如发送通知等
+  }
+}
+```
+
+### 使用场景
+
+- **解耦组件**：通过事件机制，可以减少不同组件之间的直接依赖。
+- **异步处理**：事件可以用来触发异步任务，如后台作业、通知系统等。
+- **日志记录和监控**：每当特定事件发生时，可以记录日志或向监控系统发送警报。
+- **微服务通信**：在微服务架构中，事件可以作为服务间通信的一种方式，尽管更常见的是使用消息队列或其他专用工具。
+
+`@nestjs/event-emitter` 提供了一种简单且强大的方法来构建响应式和可扩展的应用程序。
+
+## @nestjs/cli
+`@nestjs/cli` 是 NestJS 的命令行接口工具，用于加速开发过程。它可以帮助开发者快速创建新的 NestJS 项目、生成模块、控制器、服务等，以及执行其他实用的任务。通过使用 `@nestjs/cli`，你可以确保项目的结构遵循最佳实践，并且可以减少样板代码的编写。
+
+以下是一些常见的 `@nestjs/cli` 命令：
+
+- 创建新项目:
+  ```bash
+  nest new project-name
+  ```
+
+- 生成新模块:
+  ```bash
+  nest generate module module-name
+  ```
+
+- 生成新控制器:
+  ```bash
+  nest generate controller controller-name
+  ```
+
+- 生成新服务（提供者）:
+  ```bash
+  nest generate service service-name
+  ```
+
+- 生成守卫、中间件、管道、拦截器等:
+  ```bash
+  nest generate guard|middleware|pipe|interceptor name
+  ```
+
+安装 `@nestjs/cli` 全局到你的机器上，你可以在任何地方运行上述命令。要全局安装 CLI，你可以使用 npm 或 yarn:
+
+```bash
+npm install -g @nestjs/cli
+```
+或
+```bash
+yarn global add @nestjs/cli
+```
+
+如果你想要检查已安装的 CLI 版本，可以使用以下命令：
+```bash
+nest --version
+```
+
+请记得在执行这些命令之前确认你的环境中已经正确设置了 Node.js 和 npm 或 yarn。此外，CLI 工具会不断更新，因此建议定期检查官方文档以获取最新的功能和用法。
+
+## @nestjs/testing
+`@nestjs/testing` 是 NestJS 框架提供的一个模块，旨在简化测试过程。它提供了一套工具和辅助函数，帮助开发者创建和组织单元测试、集成测试等。通过 `@nestjs/testing`，你可以轻松地模拟依赖项，创建测试模块，并对应用程序的各个部分进行彻底的测试。
+
+以下是如何使用 `@nestjs/testing` 进行测试的基本步骤：
+
+### 安装
+
+首先，你需要确保安装了 `@nestjs/testing` 包。如果你已经安装了 NestJS CLI 并创建了一个项目，那么通常这个包会自动包含在你的开发依赖中。如果没有，可以通过 npm 或 yarn 安装：
+
+```bash
+npm install --save-dev @nestjs/testing
+```
+或
+```bash
+yarn add --dev @nestjs/testing
+```
+
+### 创建测试文件
+
+对于每一个需要测试的服务、控制器或其他组件，你都应该创建相应的测试文件。通常，这些文件会被命名为 `[component].spec.ts`（例如 `cats.service.spec.ts`）。
+
+### 编写测试
+
+在测试文件中，你可以使用 `Test.createTestingModule()` 方法来创建一个测试模块，该模块可以配置服务、控制器等依赖关系。然后，你可以使用 `compile()` 方法编译测试模块并获取应用对象或服务实例以进行测试。
+
+下面是一个简单的例子，展示了如何为一个服务编写测试：
+
+```typescript
+import { Test, TestingModule } from '@nestjs/testing';
+import { CatsService } from './cats.service';
+
+describe('CatsService', () => {
+  let service: CatsService;
+
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [CatsService],
+    }).compile();
+
+    service = module.get<CatsService>(CatsService);
+  });
+
+  it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
+});
+```
+
+在这个例子中，我们创建了一个测试模块，其中包含了 `CatsService` 提供者。接着，我们在每个测试之前异步编译测试模块，并从编译后的模块中获取 `CatsService` 的实例。最后，我们用一个简单的断言检查服务是否已定义。
+
+### 使用 Jest 测试框架
+
+NestJS 默认集成了 Jest 测试框架。Jest 提供了许多便捷的功能，如快照测试、代码覆盖率报告等。因此，你可以利用 Jest 的强大功能来增强你的测试。
+
+要运行测试，可以在项目的根目录下执行：
+
+```bash
+npm run test
+```
+
+这将运行所有匹配 `.spec.ts` 文件中的测试。
+
+### 异步测试与依赖注入
+
+当你的服务依赖于其他服务或外部资源（如数据库连接）时，你可以使用 `jest.mock()` 函数来模拟这些依赖，或者在 `createTestingModule` 中手动指定它们的实现。
+
+例如：
+
+```typescript
+import { Test, TestingModule } from '@nestjs/testing';
+import { CatsService } from './cats.service';
+import { Model } from 'mongoose';
+import { Cat } from './interfaces/cat.interface';
+import { CatsModule } from './cats.module';
+
+describe('CatsService', () => {
+  let service: CatsService;
+  let model: Model<Cat>;
+
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      imports: [CatsModule],
+    })
+    .overrideProvider(Model)
+    .useValue({
+      find: jest.fn(),
+      // ... mock other methods
+    })
+    .compile();
+
+    service = module.get<CatsService>(CatsService);
+    model = module.get<Model<Cat>>(getModelToken('Cat'));
+  });
+
+  it('should return an array of cats', async () => {
+    jest.spyOn(model, 'find').mockImplementationOnce(() => ({
+      exec: jest.fn().mockResolvedValue([{ name: 'Milo' }, { name: 'Otis' }]),
+    }));
+
+    expect(await service.findAll()).toEqual([{ name: 'Milo' }, { name: 'Otis' }]);
+  });
+});
+```
+
+在这个例子中，我们覆盖了默认的 `Model` 提供者，并为其方法提供了模拟实现。这使得我们可以独立于实际的数据库连接来测试 `CatsService` 的行为。
+
+希望这些信息对你有所帮助！如果你有更多关于 `@nestjs/testing` 的具体问题，请随时提问。
