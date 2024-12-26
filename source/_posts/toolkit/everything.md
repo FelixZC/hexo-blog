@@ -1,7 +1,7 @@
 ---
 title: Everything
 date: 2024-06-16
-cover: /assets/images/jpg/12.jpg
+cover: /assets/images/jpg/135.jpg
 author: "pzc"
 categories: [toolkit]
 tags: [Exe]
