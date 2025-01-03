@@ -10,12 +10,33 @@ Compodoc 是一个用于 Angular、Vue 和 React 应用程序的文档生成工�
 
 ### 主要特点
 
-- **自动生成文档**：Compodoc 可以扫描你的项目文件，并根据代码中的注释自动生成文档。
-- **支持多种框架**：最初是为 Angular 设计的，但现在也支持 Vue 和 React 框架。
-- **定制化**：用户可以通过配置文件来自定义文档的样式和内容。
-- **多种输出格式**：支持生成 HTML、JSON 和 Markdown 格式的文档。
-- **集成能力**：可以轻松地与 CI/CD 流程集成，确保每次构建后都能更新文档。
-- **多语言支持**：支持多种语言的注释，便于国际化团队使用。
+1. **自动生成文档**：只需要简单的命令，Compodoc 就能根据你的代码库生成文档。
+2. **支持多种框架**：最初是为 Angular 设计的，但现在也支持 NestJS 和 Vue.js。
+3. **图表生成**：可以生成模块依赖图、组件树等，帮助理解架构。
+4. **Markdown 支持**：可以在注释中使用 Markdown 语法来丰富文档的内容。
+5. **私有和公共文档**：可以选择将文档部署到私有或公共环境中。
+6. **定制主题**：提供默认的主题，也可以定制自己的样式。
+7. **集成 CI/CD 流程**：容易与持续集成和持续交付流程结合，确保文档总是最新的。
+
+### 资料
+1. **官方 GitHub 仓库**：
+   - [Compodoc GitHub](https://github.com/compodoc/compodoc)：这是 Compodoc 的官方 GitHub 页面，您可以在这里找到最新的版本信息、安装指南以及如何贡献代码。
+
+2. **在线文档生成器**：
+   - [Compodoc Online](https://compodoc.app/)：虽然 Compodoc 主要是一个命令行工具，但也有一个在线平台可以尝试其功能。
+
+3. **安装与使用教程**：
+   - [Getting Started with Compodoc](https://compodoc.app/angular-core/guide/getting-started.html)：官方提供的入门指南，详细介绍了如何开始使用 Compodoc。
+
+4. **社区支持**：
+   - [Stack Overflow](https://stackoverflow.com/questions/tagged/compodoc)：在 Stack Overflow 上搜索或提问有关 Compodoc 的问题。
+   - [GitHub Discussions](https://github.com/compodoc/compodoc/discussions)：参与 Compodoc 的 GitHub 讨论区，与其他开发者交流心得。
+
+5. **博客文章和教程**：
+   - 搜索引擎如 [Google](https://www.google.com/search?q=compodoc+tutorial) 可以帮助您找到各种博客文章和第三方教程，这些资料通常包含了实际案例和最佳实践。
+
+6. **视频教程**：
+   - [YouTube](https://www.youtube.com/results?search_query=compodoc+tutorial)：在 YouTube 上搜索 Compodoc 教程，观看视频学习如何设置和使用该工具。
 
 ### 安装与使用
 
