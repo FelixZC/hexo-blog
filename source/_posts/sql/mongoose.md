@@ -109,9 +109,6 @@ Mongoose 的官方资料是学习和使用 Mongoose 的最佳资源。以下是�
    - [Mongoose FAQ](https://mongoosejs.com/docs/faq.html) 列出了一些常见的问题及其解答，对于解决日常遇到的问题很有帮助。
 7. **GitHub 仓库**：
    - [Mongoose GitHub 仓库](https://github.com/Automattic/mongoose) 不仅可以查看源码，还可以提交问题或贡献代码。
-8. **社区论坛**：
-   - [Stack Overflow 上的 Mongoose 标签](https://stackoverflow.com/questions/tagged/mongoose) 是一个很好的地方，你可以在这里找到许多关于 Mongoose 的问题和答案。
-   - [Mongoose Google Group](https://groups.google.com/g/mongoose-orm) 也是一个活跃的讨论社区。
 
 通过这些官方资源，你可以获得有关 Mongoose 的最新信息和支持。如果你有任何具体的技术问题或者需要进一步的帮助，也可以访问这些资源或直接询问我。
 

@@ -41,7 +41,7 @@ NestJS 是一个用于构建高效、可扩展的 Node.js 服务器端应用程�
 ### 社区资源
 
 - **教程和视频**:
-  - YouTube和Bilibili 上有许多开发者分享的 NestJS 教程，如 Kody Brown, Ben Awad 等知名开发者。
+  - Bilibili 上有许多开发者分享的 NestJS 教程，如 Kody Brown, Ben Awad 等知名开发者。
   - [Epic Web Dev](https://www.epicweb.dev/) 也提供了一些高质量的 NestJS 教学视频。
 
 - **第三方库和插件**:

@@ -64,20 +64,8 @@ Handlebars.registerHelper('ifeq', function(a, b, opts) {
 
 - **[Handlebars 官方网站](https://handlebarsjs.com/)**：这是获取最新信息、API 参考和官方教程的最佳地点。官方网站提供了详尽的指南，包括安装方法、基本语法、辅助函数、部分模板等内容。
 
-### 在线教程和指南
-
-- **[MDN Web Docs - Handlebars](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction_to_Handlebars)**：虽然 MDN 主要关注浏览器端的技术，但它们也提供了一些关于如何使用 Handlebars 的介绍。
-- **[FreeCodeCamp Guide to Handlebars](https://www.freecodecamp.org/news/tag/handlebars/)**：FreeCodeCamp 是一个非常受欢迎的学习平台，它上面有许多关于 Handlebars 的文章和教程。
-- **[W3Schools Handlebars Tutorial](https://www.w3schools.com/js/js_templates_handlebars.asp)**：W3Schools 提供了一个简单的入门教程，适合初学者快速上手。
-
-### 视频教程
-
-- **YouTube**：在 YouTube 上搜索“Handlebars tutorial”，可以找到许多高质量的视频教程，从基础到高级的主题都有覆盖。
-- **Udemy 或 Coursera**：这些平台上可能有付费课程，通常包含更结构化的学习路径和项目实践。
-
 ### 社区和支持
 
-- **[Stack Overflow](https://stackoverflow.com/questions/tagged/handlebars.js)**：当遇到具体问题时，Stack Overflow 是提问和寻找答案的好地方。
 - **GitHub Issues**：如果遇到 bug 或者想要请求新功能，可以在 Handlebars 的 GitHub 仓库中提交 issue。
 
 ### 实践项目
@@ -85,8 +73,6 @@ Handlebars.registerHelper('ifeq', function(a, b, opts) {
 尝试构建一些小型项目来加深理解：
 
 - **博客系统**：创建一个简单的博客应用，其中包含文章列表、单个文章页面等，利用 Handlebars 来动态生成 HTML。
-- **用户管理系统**：开发一个用户管理界面，使用 Handlebars 渲染用户列表，并根据用户状态显示不同的操作按钮（如编辑、删除）。
-- **电子商务网站前端**：设计一个产品展示页面，使用 Handlebars 来渲染商品列表，并实现分页和过滤功能。
 
 ### 高级主题
 

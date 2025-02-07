@@ -40,7 +40,6 @@ Dart 是一种由 Google 开发的客户端优化的编程语言，用于构建 
   #### 2. 社区资源
 
   - **Dart 官方论坛**：[Dart 官方论坛](https://groups.google.com/g/dart-lang-discuss) 用于提问和讨论。
-  - **Stack Overflow**：[Stack Overflow](https://stackoverflow.com/questions/tagged/dart) 上有大量的 Dart 和 Flutter 相关问题和答案。
   - **GitHub**：[Dart GitHub 组织](https://github.com/dart-lang) 和 [Flutter GitHub 组织](https://github.com/flutter) 包含了许多开源项目和库。
 
   #### 3. 在线学习

@@ -29,14 +29,10 @@ Compodoc 是一个用于 Angular、Vue 和 React 应用程序的文档生成工�
    - [Getting Started with Compodoc](https://compodoc.app/angular-core/guide/getting-started.html)：官方提供的入门指南，详细介绍了如何开始使用 Compodoc。
 
 4. **社区支持**：
-   - [Stack Overflow](https://stackoverflow.com/questions/tagged/compodoc)：在 Stack Overflow 上搜索或提问有关 Compodoc 的问题。
    - [GitHub Discussions](https://github.com/compodoc/compodoc/discussions)：参与 Compodoc 的 GitHub 讨论区，与其他开发者交流心得。
 
 5. **博客文章和教程**：
    - 搜索引擎如 [Google](https://www.google.com/search?q=compodoc+tutorial) 可以帮助您找到各种博客文章和第三方教程，这些资料通常包含了实际案例和最佳实践。
-
-6. **视频教程**：
-   - [YouTube](https://www.youtube.com/results?search_query=compodoc+tutorial)：在 YouTube 上搜索 Compodoc 教程，观看视频学习如何设置和使用该工具。
 
 ### 安装与使用
 

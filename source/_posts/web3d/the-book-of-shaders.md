@@ -63,7 +63,7 @@ Shader基础主要包括以下几个核心概念和组成部分：
 
 ### 4. 在线资源与教程
 - **官方文档**：Unity和Unreal Engine的官方文档提供了丰富的Shader教程和示例代码。
-- **在线课程**：网站如Udemy、Coursera、YouTube上有许多免费和付费的Shader编程课程，适合不同水平的学习者。
+- **在线课程**：网站如Udemy、Coursera、Bilibili上有许多免费和付费的Shader编程课程，适合不同水平的学习者。
 - **书籍**：《Real-Time Rendering》、《The Book of Shaders》、《Unity Shader and Effects Cookbook》等书籍是深入学习的好资源。
 - **社区与论坛**：加入Unity论坛、Reddit的r/GraphicsProgramming等社区，遇到问题时寻求帮助，也能看到其他人的项目和经验分享。
 

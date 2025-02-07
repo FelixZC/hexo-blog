@@ -54,11 +54,7 @@ rimraf path/to/your/file-or-directory
    - 许多开发者会在他们的博客或技术网站上分享使用 `rimraf` 的经验。这些文章有时会包含更具体的用例或者最佳实践。
    - 你可以通过搜索引擎搜索“rimraf tutorial”或“how to use rimraf”来查找这类资源。
 
-4. **Stack Overflow 和其他开发者论坛**：
-   - 如果你在使用 `rimraf` 时遇到了具体的问题，可以在 Stack Overflow 或其他开发者论坛上提问，或者搜索已经存在的问题和答案。
-   - 网址: [https://stackoverflow.com/questions/tagged/rimraf](https://stackoverflow.com/questions/tagged/rimraf)
-
-5. **书籍和电子书**：
+4. **书籍和电子书**：
    - 有些关于 Node.js 或 JavaScript 构建工具的书籍可能会涵盖 `rimraf` 的使用。如果你正在阅读相关主题的书籍，不妨查阅一下目录看看是否有提到 `rimraf`。
 
 请确保你总是使用最新的官方文档和资源，因为软件库和工具会随着时间更新，旧版本的资料可能不会反映最新的特性和最佳实践。

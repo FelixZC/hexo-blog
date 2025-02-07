@@ -48,11 +48,10 @@ Docker 官方网站提供了丰富的资源，包括官方文档、教程、博�
 - **Tutorials**: [https://docs.docker.com/tutorials/](https://docs.docker.com/tutorials/) —— 包括了多个教程主题，比如如何使用 Docker Compose 和 Kubernetes。
 
 #### 第三方教程和资源
-- **Docker for Beginners**: 互联网上有许多第三方网站提供的 Docker 入门教程，比如在 YouTube 上有许多视频教程，或者在 Udemy、Coursera 等平台上也有付费课程。
+- **Docker for Beginners**: 互联网上有许多第三方网站提供的 Docker 入门教程，比如在 Bilibili 上有许多视频教程，或者在 Udemy、Coursera 等平台上也有付费课程。
 - **Docker Book**: 有一些书籍专注于 Docker 技术的深入讲解，如《Docker in Action》等，这些书籍通常涵盖更广泛的主题并且适合不同技术水平的读者。
 
 ### Docker 社区资源
-- **Stack Overflow**: 在 Stack Overflow 上，你可以找到大量的 Docker 相关问题和答案。
 - **GitHub**: 有许多开源项目和示例可以在 GitHub 上找到，可以帮助你了解最佳实践和高级用法。
 
 利用这些资源，无论是新手还是有经验的用户都能找到适合自己的学习路径，从基础概念到进阶技巧，都有所覆盖。对于想要深入研究 Docker 或者解决特定问题的人来说，官方文档和社区支持将是宝贵的资源。

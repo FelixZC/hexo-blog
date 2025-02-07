@@ -158,7 +158,6 @@ Flutter 拥有丰富的插件和包生态系统，这些插件和包可以帮助
 
 #### 2. 社区支持
 Flutter 拥有一个活跃的开发者社区，社区成员经常分享代码、教程和最佳实践。你可以通过以下渠道获取帮助和支持：
-- **Stack Overflow**：许多 Flutter 相关的问题和答案都可以在这里找到。
 - **GitHub**：Flutter 的源代码托管在 GitHub 上，你可以在那里提交 bug 报告和功能请求。
 - **Flutter Dev**：官方的 Flutter 开发者邮件列表。
 - **Slack/Discord**：Flutter 官方和非官方的聊天群组，方便开发者交流和讨论。
