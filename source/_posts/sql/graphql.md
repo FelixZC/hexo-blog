@@ -48,32 +48,8 @@ tags: [Database]
 
 ### 社区与博客
 
-1. **Dev.to 和 Medium**  
-   - 这两个平台上有许多开发者分享他们的 GraphQL 使用经验和技巧，非常适合获取最新动态和最佳实践。
-
-2. **The Guild Blog**  
+1. **The Guild Blog**  
    - [The Guild](https://the-guild.dev/blog) 经常发布有关 GraphQL 的深度文章和技术见解。
-
-3. **Hashnode**  
-   - 一个专注于技术博客的社区，上面有很多关于 GraphQL 的讨论和文章。
-
-### 开源项目和工具
-
-1. **Apollo GraphQL**  
-   - Apollo 提供了一系列围绕 GraphQL 构建的开源工具和服务，包括客户端库、服务器实现等。[Apollo 官网](https://www.apollographql.com/) 是一个很好的起点。
-
-2. **GraphiQL**  
-    - GraphiQL 是一个可交互的 GraphQL IDE，内置在很多 GraphQL 服务中，是学习和调试查询的好帮手。
-
-### 图书
-
-1. **"Learning GraphQL" by Matt Griffin and Sam Bussieck**  
-    - 这本书为初学者提供了详细的指导，并通过实际案例帮助读者理解如何构建和使用 GraphQL API。
-
-2. **"GraphQL in Action" by Samer Buna**  
-    - 一本面向中级开发者的书籍，讲解了如何将 GraphQL 应用于真实世界的场景。
-
-根据你的学习风格和个人喜好，可以选择上述任意一种或几种资源来开始你的 GraphQL 学习之旅。
 
 ## 示例
 

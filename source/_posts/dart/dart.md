@@ -42,17 +42,7 @@ Dart 是一种由 Google 开发的客户端优化的编程语言，用于构建 
   - **Dart 官方论坛**：[Dart 官方论坛](https://groups.google.com/g/dart-lang-discuss) 用于提问和讨论。
   - **GitHub**：[Dart GitHub 组织](https://github.com/dart-lang) 和 [Flutter GitHub 组织](https://github.com/flutter) 包含了许多开源项目和库。
 
-  #### 3. 在线学习
-
-  - **DartPad**：[DartPad](https://dartpad.dev/) 是一个在线 Dart 编程环境，适合初学者。
-  - **Codelabs**：[Dart Codelabs](https://codelabs.developers.google.com/?cat=Dart) 和 [Flutter Codelabs](https://flutter.dev/docs/get-started/codelab) 提供了官方的互动式教程。
-
-  #### 4. 博客和文章
-
-  - **Medium**：[Dart 和 Flutter 的 Medium 标签](https://medium.com/tag/dart) 上有许多开发者分享的经验和技巧。
-  - **Dev.to**：[Dart 和 Flutter 的 Dev.to 标签](https://dev.to/t/dart) 上也有许多高质量的文章和教程。
-
-  #### 5. 开源项目
+  #### 3. 开源项目
 
   - **Awesome Dart**：[Awesome Dart](https://github.com/yissachar/awesome-dart) 是一个收集了大量 Dart 资源和项目的列表。
   - **Awesome Flutter**：[Awesome Flutter](https://github.com/Solido/awesome-flutter) 是一个收集了大量 Flutter 资源和项目的列表。

@@ -19,7 +19,7 @@ RxJS（Reactive Extensions for JavaScript）是一个用于处理异步数据流
 - [RxJS 官方文档](https://rxjs.dev/)
 - [ReactiveX 文档](http://reactivex.io/)
 
-#### 2. **社区和论坛**
+#### 2. **社区和生态**
 
 - [GitHub Issues](https://github.com/ReactiveX/rxjs/issues)
 

@@ -42,7 +42,7 @@ Sequelize 的官方文档是学习和参考的最佳资源。它涵盖了从安�
 - **官方网站**：[Sequelize 官网](https://sequelize.org/)
 - **官方文档**：[Sequelize 文档](https://sequelize.org/docs/v6/)
 
-### 社区和论坛
+### 社区和支持
 参与社区讨论可以获得实际使用中的技巧和解决方案，也能得到其他开发者的第一手经验分享。
 
 - **GitHub 仓库**：[Sequelize GitHub](https://github.com/sequelize/sequelize) - 这里可以找到项目的源代码、提交问题或查看已有的问题。
@@ -51,7 +51,6 @@ Sequelize 的官方文档是学习和参考的最佳资源。它涵盖了从安�
 网络上有大量的教程和博客文章，可以帮助你更快地上手 Sequelize。
 
 - **Bilibili**：有许多视频教程，适合视觉学习者。
-- **Medium 和 Dev.to**：这些平台上有很多开发者分享的实践经验和技术文章。
 
 ### 示例项目
 通过研究实际的项目实例，你可以更好地理解如何在真实世界的应用中使用 Sequelize。

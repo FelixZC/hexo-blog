@@ -49,7 +49,6 @@ NestJS 是一个用于构建高效、可扩展的 Node.js 服务器端应用程�
 
 - **书籍**:
   - 《NestJS实战》（中文版）是由阿里云开发者社区出版的一本介绍如何使用 NestJS 构建企业级应用的书籍。
-  - 《Building Microservices with NestJS: A Practical Guide to Building Scalable and Maintainable Microservices in Node.js》提供了关于使用 NestJS 构建微服务架构的实际指导。
 
 这些资源应该能为你提供一个全面的学习和发展平台，无论你是初学者还是想要深入研究特定领域的开发者。
 
