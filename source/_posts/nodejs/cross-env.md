@@ -50,73 +50,11 @@ yarn add --dev cross-env
    - 许多开发者会在他们的博客上分享如何使用特定工具的经验。对于 `cross-env`，你可能会找到一些解释如何配置它来适应不同开发场景的文章。
 
 4. **社区和支持论坛**：
-   - GitHub Issues 页面是寻求帮助的地方，尤其是当你遇到可能是bug的问题时。
+   - GitHub Issues 页面也是寻求帮助的地方，尤其是当你遇到可能是bug的问题时。
 
 5. **书籍和视频课程**：
    - 对于一些流行的工具和技术栈，会有专门的书籍或者视频课程深入讲解。虽然针对 `cross-env` 可能不会有专门的书籍，但有关 Node.js 和环境配置的资源通常会提及它。
 
-## 进阶
-
-如果你对 `cross-env` 的使用已经有一定了解，并希望深入探讨更高级的用法或相关主题，这里有一些进阶的内容供你参考：
-
-### 1. 复杂环境变量设置
-除了简单的键值对设置，`cross-env` 还支持更复杂的环境变量配置。例如，可以设置多个环境变量，或者将一个环境变量的值设置为其他环境变量的组合。
-
-```sh
-cross-env API_URL=https://api.example.com BASE_URL=https://example.com node app.js
-```
-
-甚至可以进行一些基本的字符串操作：
-
-```sh
-cross-env BASE_URL=https://example.com API_URL=${BASE_URL}/api node app.js
-```
-
-### 2. 使用 `.env` 文件
-虽然 `cross-env` 本身不直接处理 `.env` 文件，但你可以结合 `dotenv` 包来加载 `.env` 文件中的环境变量。这在开发环境中特别有用，因为它允许你将敏感信息保存在文件中而不必硬编码到代码里。
-
-安装 `dotenv`:
-
-```sh
-npm install dotenv --save-dev
-```
-
-然后，在你的应用程序入口处添加以下代码来加载 `.env` 文件：
-
-```js
-require('dotenv').config();
-```
-
-### 3. 集成 CI/CD 流水线
-当你在持续集成和持续部署（CI/CD）流水线中使用 `cross-env` 时，确保它能够正确地与不同的平台和服务提供商协同工作。许多 CI/CD 工具都有自己的方式来管理环境变量，所以你可能需要调整 `cross-env` 的使用方式以适应这些工具。
-
-### 4. 环境变量加密
-对于包含敏感数据的环境变量，考虑使用加密存储解决方案。例如，AWS Secrets Manager、Azure Key Vault 或者 HashiCorp Vault 可以安全地存储和检索敏感信息。你可以在应用启动时通过 API 调用来获取解密后的值，并使用 `cross-env` 设置它们。
-
-### 5. 自动化脚本
-编写自动化脚本来简化复杂环境的设置。例如，你可以创建一个 npm 脚本来同时设置多个环境变量并启动应用程序：
-
-```json
-"scripts": {
-  "start:prod": "cross-env NODE_ENV=production API_URL=https://api.prod.com node app.js"
-}
-```
-
-### 6. 环境变量调试
-为了更容易地调试环境变量问题，可以在应用程序中打印出所有当前的环境变量。Node.js 提供了 `process.env` 对象来访问环境变量，因此你可以简单地将它们打印出来：
-
-```js
-console.log(process.env);
-```
-
-或者，仅打印特定的环境变量：
-
-```js
-console.log('NODE_ENV:', process.env.NODE_ENV);
-```
-
-### 7. 版本控制和跨版本兼容性
-确保你的项目依赖项（包括 `cross-env`）保持最新，但也要注意不要引入破坏性的变更。查看 `cross-env` 的发布说明，了解每个新版本带来的改动，并根据需要更新你的项目。
 
 ## 示例
 
@@ -245,3 +183,66 @@ jobs:
 ### 总结
 
 以上是一个完整的示例，展示了如何使用 `cross-env` 来管理不同平台上的环境变量，结合 `.env` 文件进行环境配置，并将其集成到 CI/CD 流水线中。这个示例涵盖了从项目初始化到部署的全过程，适用于大多数 Node.js 应用程序。
+
+## 进阶
+
+如果你对 `cross-env` 的使用已经有一定了解，并希望深入探讨更高级的用法或相关主题，这里有一些进阶的内容供你参考：
+
+### 1. 复杂环境变量设置
+除了简单的键值对设置，`cross-env` 还支持更复杂的环境变量配置。例如，可以设置多个环境变量，或者将一个环境变量的值设置为其他环境变量的组合。
+
+```sh
+cross-env API_URL=https://api.example.com BASE_URL=https://example.com node app.js
+```
+
+甚至可以进行一些基本的字符串操作：
+
+```sh
+cross-env BASE_URL=https://example.com API_URL=${BASE_URL}/api node app.js
+```
+
+### 2. 使用 `.env` 文件
+虽然 `cross-env` 本身不直接处理 `.env` 文件，但你可以结合 `dotenv` 包来加载 `.env` 文件中的环境变量。这在开发环境中特别有用，因为它允许你将敏感信息保存在文件中而不必硬编码到代码里。
+
+安装 `dotenv`:
+
+```sh
+npm install dotenv --save-dev
+```
+
+然后，在你的应用程序入口处添加以下代码来加载 `.env` 文件：
+
+```js
+require('dotenv').config();
+```
+
+### 3. 集成 CI/CD 流水线
+当你在持续集成和持续部署（CI/CD）流水线中使用 `cross-env` 时，确保它能够正确地与不同的平台和服务提供商协同工作。许多 CI/CD 工具都有自己的方式来管理环境变量，所以你可能需要调整 `cross-env` 的使用方式以适应这些工具。
+
+### 4. 环境变量加密
+对于包含敏感数据的环境变量，考虑使用加密存储解决方案。例如，AWS Secrets Manager、Azure Key Vault 或者 HashiCorp Vault 可以安全地存储和检索敏感信息。你可以在应用启动时通过 API 调用来获取解密后的值，并使用 `cross-env` 设置它们。
+
+### 5. 自动化脚本
+编写自动化脚本来简化复杂环境的设置。例如，你可以创建一个 npm 脚本来同时设置多个环境变量并启动应用程序：
+
+```json
+"scripts": {
+  "start:prod": "cross-env NODE_ENV=production API_URL=https://api.prod.com node app.js"
+}
+```
+
+### 6. 环境变量调试
+为了更容易地调试环境变量问题，可以在应用程序中打印出所有当前的环境变量。Node.js 提供了 `process.env` 对象来访问环境变量，因此你可以简单地将它们打印出来：
+
+```js
+console.log(process.env);
+```
+
+或者，仅打印特定的环境变量：
+
+```js
+console.log('NODE_ENV:', process.env.NODE_ENV);
+```
+
+### 7. 版本控制和跨版本兼容性
+确保你的项目依赖项（包括 `cross-env`）保持最新，但也要注意不要引入破坏性的变更。查看 `cross-env` 的发布说明，了解每个新版本带来的改动，并根据需要更新你的项目。

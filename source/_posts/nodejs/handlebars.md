@@ -81,98 +81,6 @@ Handlebars.registerHelper('ifeq', function(a, b, opts) {
 - **自定义辅助函数**：编写自己的辅助函数来处理日期格式化、字符串操作等任务。
 - **预编译模板**：为了提高性能，可以提前编译 Handlebars 模板，然后在运行时使用预编译的结果。
 - **集成与框架**：了解如何将 Handlebars 集成到像 Express、Next.js 等服务器端 JavaScript 框架中，或作为客户端库的一部分。
-
-
-
-## 进阶
-
-下面是对 Handlebars 的一些进阶特性和概念的介绍。掌握这些特性将有助于您更高效地使用 Handlebars 创建复杂且动态的应用程序。
-
-### 1. 自定义辅助函数（Custom Helpers）
-
-Handlebars 允许你创建自定义辅助函数来扩展模板的功能。这可以包括逻辑判断、数学运算、日期格式化等。你可以通过 `Handlebars.registerHelper` 方法注册一个全局可用的辅助函数。
-
-```javascript
-// 注册一个简单的辅助函数用于比较两个值是否相等
-Handlebars.registerHelper('ifCond', function(v1, operator, v2, options) {
-  switch (operator) {
-    case '==':
-      return (v1 == v2) ? options.fn(this) : options.inverse(this);
-    // 可以添加更多条件...
-  }
-});
-```
-
-### 2. 部分模板（Partials）
-
-部分模板是预定义的模板片段，可以在主模板中重复使用。这对于构建可维护和模块化的模板非常有用。你可以使用 `{{> partialName }}` 来引用部分模板，并且可以通过 `@partial-block` 访问传递给部分模板的内容。
-
-```handlebars
-<!-- _header.partial.hbs -->
-<header>
-  <h1>{{title}}</h1>
-</header>
-
-<!-- main template -->
-{{> _header }}
-```
-
-此外，还可以传递上下文或参数给部分模板：
-
-```handlebars
-{{> _userProfile user }}
-```
-
-### 3. 预编译模板（Precompilation）
-
-为了提高性能，尤其是在生产环境中，你可以提前编译 Handlebars 模板。预编译会生成 JavaScript 函数，这些函数在运行时可以直接调用，而不需要再解析模板字符串。
-
-```bash
-# 使用命令行工具预编译模板
-handlebars file.hbs -f compiledTemplate.js
-```
-
-然后，在你的应用中加载并使用这些预编译的模板：
-
-```javascript
-const template = require('./compiledTemplate');
-const html = template(data);
-```
-
-### 4. 内置辅助函数（Built-in Helpers）
-
-Handlebars 提供了一些内置的辅助函数，如 `each`、`if`、`unless` 等，它们可以帮助你在模板中实现循环和条件逻辑。了解如何有效利用这些内置辅助函数对于编写简洁的模板非常重要。
-
-- **`each`**：遍历数组或对象。
-- **`if` 和 `unless`**：基于表达式的真假来包含或排除模板部分。
-- **`with`**：改变当前上下文。
-
-### 5. 上下文与路径（Context and Paths）
-
-理解 Handlebars 中的上下文转换和路径查找规则对于正确引用数据至关重要。例如，在嵌套结构中，你可以使用相对路径 `../` 回退到父级上下文，或者使用绝对路径 `/` 从根开始查找。
-
-```handlebars
-{{#each items}}
-  {{name}} - {{../category.name}}
-{{/each}}
-```
-
-### 6. 数据绑定（Data Binding）
-
-虽然 Handlebars 是一种无逻辑的模板引擎，但它仍然支持双向数据绑定库（如 Ember.js）中的单向数据流模式。这意味着当模型数据更新时，视图也会相应更新。如果你正在构建一个交互式应用，考虑结合这些技术来增强用户体验。
-
-### 7. 安全性与转义（Security and Escaping）
-
-默认情况下，Handlebars 会对输出进行HTML转义以防止XSS攻击。然而，有时候你需要输出未经转义的原始HTML，这时可以使用三重大括号 `{{{ }}}`。但是，请务必谨慎使用，确保不会引入安全风险。
-
-```handlebars
-{{{rawHtmlContent}}}
-```
-
-### 8. 插件系统（Plugin System）
-
-Handlebars 支持插件扩展其功能。例如，有插件可以提供额外的辅助函数集合，或是改进模板加载器的行为。探索社区提供的插件可以为你的项目增添更多灵活性。
-
 ## 示例
 
 下面是一个完整的 Handlebars 示例，包括创建自定义辅助函数、使用部分模板、预编译模板以及在 Node.js 中集成和渲染这些模板。这个例子将展示如何构建一个简单的博客系统，该系统可以列出文章并显示单个文章的详细信息。
@@ -346,6 +254,92 @@ const templates = require('./compiledTemplates');
 ```
 
 请注意，上面的代码片段仅用于说明如何加载预编译的模板；实际实现会根据你的项目结构有所不同。
+## 进阶
 
+下面是对 Handlebars 的一些进阶特性和概念的介绍。掌握这些特性将有助于您更高效地使用 Handlebars 创建复杂且动态的应用程序。
 
+### 1. 自定义辅助函数（Custom Helpers）
+
+Handlebars 允许你创建自定义辅助函数来扩展模板的功能。这可以包括逻辑判断、数学运算、日期格式化等。你可以通过 `Handlebars.registerHelper` 方法注册一个全局可用的辅助函数。
+
+```javascript
+// 注册一个简单的辅助函数用于比较两个值是否相等
+Handlebars.registerHelper('ifCond', function(v1, operator, v2, options) {
+  switch (operator) {
+    case '==':
+      return (v1 == v2) ? options.fn(this) : options.inverse(this);
+    // 可以添加更多条件...
+  }
+});
+```
+
+### 2. 部分模板（Partials）
+
+部分模板是预定义的模板片段，可以在主模板中重复使用。这对于构建可维护和模块化的模板非常有用。你可以使用 `{{> partialName }}` 来引用部分模板，并且可以通过 `@partial-block` 访问传递给部分模板的内容。
+
+```handlebars
+<!-- _header.partial.hbs -->
+<header>
+  <h1>{{title}}</h1>
+</header>
+
+<!-- main template -->
+{{> _header }}
+```
+
+此外，还可以传递上下文或参数给部分模板：
+
+```handlebars
+{{> _userProfile user }}
+```
+
+### 3. 预编译模板（Precompilation）
+
+为了提高性能，尤其是在生产环境中，你可以提前编译 Handlebars 模板。预编译会生成 JavaScript 函数，这些函数在运行时可以直接调用，而不需要再解析模板字符串。
+
+```bash
+# 使用命令行工具预编译模板
+handlebars file.hbs -f compiledTemplate.js
+```
+
+然后，在你的应用中加载并使用这些预编译的模板：
+
+```javascript
+const template = require('./compiledTemplate');
+const html = template(data);
+```
+
+### 4. 内置辅助函数（Built-in Helpers）
+
+Handlebars 提供了一些内置的辅助函数，如 `each`、`if`、`unless` 等，它们可以帮助你在模板中实现循环和条件逻辑。了解如何有效利用这些内置辅助函数对于编写简洁的模板非常重要。
+
+- **`each`**：遍历数组或对象。
+- **`if` 和 `unless`**：基于表达式的真假来包含或排除模板部分。
+- **`with`**：改变当前上下文。
+
+### 5. 上下文与路径（Context and Paths）
+
+理解 Handlebars 中的上下文转换和路径查找规则对于正确引用数据至关重要。例如，在嵌套结构中，你可以使用相对路径 `../` 回退到父级上下文，或者使用绝对路径 `/` 从根开始查找。
+
+```handlebars
+{{#each items}}
+  {{name}} - {{../category.name}}
+{{/each}}
+```
+
+### 6. 数据绑定（Data Binding）
+
+虽然 Handlebars 是一种无逻辑的模板引擎，但它仍然支持双向数据绑定库（如 Ember.js）中的单向数据流模式。这意味着当模型数据更新时，视图也会相应更新。如果你正在构建一个交互式应用，考虑结合这些技术来增强用户体验。
+
+### 7. 安全性与转义（Security and Escaping）
+
+默认情况下，Handlebars 会对输出进行HTML转义以防止XSS攻击。然而，有时候你需要输出未经转义的原始HTML，这时可以使用三重大括号 `{{{ }}}`。但是，请务必谨慎使用，确保不会引入安全风险。
+
+```handlebars
+{{{rawHtmlContent}}}
+```
+
+### 8. 插件系统（Plugin System）
+
+Handlebars 支持插件扩展其功能。例如，有插件可以提供额外的辅助函数集合，或是改进模板加载器的行为。探索社区提供的插件可以为你的项目增添更多灵活性。
 

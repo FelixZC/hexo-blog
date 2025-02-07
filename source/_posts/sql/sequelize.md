@@ -62,130 +62,6 @@ Sequelize 的官方文档是学习和参考的最佳资源。它涵盖了从安�
 ### 在线课程
 如果你想系统地学习 Sequelize，可以考虑参加在线课程，如 Udemy, Coursera 或 Pluralsight 上提供的相关课程。
 
-## 进阶
-
-对于希望深入了解 Sequelize 并将其用于更复杂应用场景的开发者，这里提供一些进阶介绍和概念。掌握这些高级特性将有助于你更好地优化应用程序性能、管理复杂的数据关系，并充分利用 Sequelize 提供的强大功能。
-
-### 1. 模型关联（Associations）
-Sequelize 支持多种模型之间的关联类型，包括一对一、一对多和多对多。了解如何有效地使用这些关联可以简化查询逻辑并提高代码的可维护性。
-
-- **BelongsTo**：定义一个模型属于另一个模型。
-- **HasOne**：定义一个模型拥有一个另一个模型的实例。
-- **HasMany**：定义一个模型拥有多个另一个模型的实例。
-- **BelongsToMany**：通过连接表定义两个模型之间的多对多关系。
-
-```javascript
-const { Model, DataTypes } = require('sequelize');
-const sequelize = new Sequelize(/* ... */);
-
-class User extends Model {}
-User.init({
-  // ...
-}, { sequelize, modelName: 'user' });
-
-class Post extends Model {}
-Post.init({
-  // ...
-}, { sequelize, modelName: 'post' });
-
-User.hasMany(Post);
-Post.belongsTo(User);
-```
-
-### 2. 钩子（Hooks）
-钩子允许你在模型生命周期的不同阶段插入自定义逻辑。例如，在保存之前验证数据或在删除之后清理相关资源。
-
-```javascript
-User.beforeCreate(async (user) => {
-  user.username = user.username.toLowerCase();
-});
-```
-
-### 3. 范围（Scopes）
-范围是预定义的查询选项集合，可以在需要时重用。它们可以帮助你减少重复代码并保持查询的一致性。
-
-```javascript
-User.addScope('active', {
-  where: {
-    active: true
-  }
-});
-
-// 使用范围
-User.scope('active').findAll();
-```
-
-### 4. 事务（Transactions）
-事务确保一系列数据库操作要么全部成功，要么全部失败回滚。这对于保持数据一致性非常重要。
-
-```javascript
-return sequelize.transaction((t) => {
-  // chain all your queries here. make sure you return them.
-  return User.create({
-    firstName: 'Abraham',
-    lastName: 'Lincoln'
-  }, { transaction: t }).then((user) => {
-    return user.setShooter({
-      firstName: 'John',
-      lastName: 'Boo'
-    }, { transaction: t });
-  });
-});
-```
-
-### 5. 迁移（Migrations）
-迁移是一种版本控制系统，用于管理数据库结构的变化。Sequelize CLI 提供了创建和运行迁移的工具。
-
-```bash
-npx sequelize-cli migration:create --name=create-users-table
-```
-
-### 6. 自定义查询（Raw Queries）
-有时候你需要执行原生 SQL 查询，这时可以使用 `sequelize.query` 方法。它允许你执行任意 SQL 并获取结果。
-
-```javascript
-sequelize.query('SELECT * FROM users WHERE age > :age', {
-  replacements: { age: 30 },
-  type: QueryTypes.SELECT
-}).then(users => {
-  console.log(users);
-});
-```
-
-### 7. 性能优化
-随着应用的增长，性能优化变得至关重要。你可以通过索引、缓存策略、批量操作等方式来优化 Sequelize 应用的性能。
-
-- **索引**：为频繁查询的字段添加索引可以显著提高查询速度。
-- **缓存**：利用内存缓存（如 Redis）存储频繁访问的数据。
-- **批量操作**：尽量减少与数据库的交互次数，比如使用批量插入和更新。
-
-### 8. 插件和扩展
-Sequelize 社区提供了丰富的插件和扩展，可以增强其功能，例如支持软删除、审计日志等。
-
-### 9. 日志记录
-Sequelize 允许你自定义日志记录行为，以便更好地调试和监控应用。
-
-```javascript
-const sequelize = new Sequelize('database', 'username', 'password', {
-  logging: console.log
-});
-```
-
-### 10. 异步/等待（Async/Await）
-利用 JavaScript 的异步编程模式（async/await），可以使代码更加清晰易读，尤其是在处理多个异步操作时。
-
-```javascript
-async function createUser() {
-  try {
-    const user = await User.create({ name: 'John Doe' });
-    console.log(user);
-  } catch (error) {
-    console.error(error);
-  }
-}
-```
-
-掌握上述进阶概念和技巧，可以帮助你在使用 Sequelize 构建复杂的应用程序时更加得心应手。
 
 ## 示例
 
@@ -381,3 +257,128 @@ node app.js
 ```
 
 这只是一个简单的入门示例，实际项目中可能还需要考虑更多细节，比如错误处理、安全性措施、性能优化等。希望这个示例能够帮助你理解如何使用 Sequelize 构建完整的应用程序。
+
+## 进阶
+
+对于希望深入了解 Sequelize 并将其用于更复杂应用场景的开发者，这里提供一些进阶介绍和概念。掌握这些高级特性将有助于你更好地优化应用程序性能、管理复杂的数据关系，并充分利用 Sequelize 提供的强大功能。
+
+### 1. 模型关联（Associations）
+Sequelize 支持多种模型之间的关联类型，包括一对一、一对多和多对多。了解如何有效地使用这些关联可以简化查询逻辑并提高代码的可维护性。
+
+- **BelongsTo**：定义一个模型属于另一个模型。
+- **HasOne**：定义一个模型拥有一个另一个模型的实例。
+- **HasMany**：定义一个模型拥有多个另一个模型的实例。
+- **BelongsToMany**：通过连接表定义两个模型之间的多对多关系。
+
+```javascript
+const { Model, DataTypes } = require('sequelize');
+const sequelize = new Sequelize(/* ... */);
+
+class User extends Model {}
+User.init({
+  // ...
+}, { sequelize, modelName: 'user' });
+
+class Post extends Model {}
+Post.init({
+  // ...
+}, { sequelize, modelName: 'post' });
+
+User.hasMany(Post);
+Post.belongsTo(User);
+```
+
+### 2. 钩子（Hooks）
+钩子允许你在模型生命周期的不同阶段插入自定义逻辑。例如，在保存之前验证数据或在删除之后清理相关资源。
+
+```javascript
+User.beforeCreate(async (user) => {
+  user.username = user.username.toLowerCase();
+});
+```
+
+### 3. 范围（Scopes）
+范围是预定义的查询选项集合，可以在需要时重用。它们可以帮助你减少重复代码并保持查询的一致性。
+
+```javascript
+User.addScope('active', {
+  where: {
+    active: true
+  }
+});
+
+// 使用范围
+User.scope('active').findAll();
+```
+
+### 4. 事务（Transactions）
+事务确保一系列数据库操作要么全部成功，要么全部失败回滚。这对于保持数据一致性非常重要。
+
+```javascript
+return sequelize.transaction((t) => {
+  // chain all your queries here. make sure you return them.
+  return User.create({
+    firstName: 'Abraham',
+    lastName: 'Lincoln'
+  }, { transaction: t }).then((user) => {
+    return user.setShooter({
+      firstName: 'John',
+      lastName: 'Boo'
+    }, { transaction: t });
+  });
+});
+```
+
+### 5. 迁移（Migrations）
+迁移是一种版本控制系统，用于管理数据库结构的变化。Sequelize CLI 提供了创建和运行迁移的工具。
+
+```bash
+npx sequelize-cli migration:create --name=create-users-table
+```
+
+### 6. 自定义查询（Raw Queries）
+有时候你需要执行原生 SQL 查询，这时可以使用 `sequelize.query` 方法。它允许你执行任意 SQL 并获取结果。
+
+```javascript
+sequelize.query('SELECT * FROM users WHERE age > :age', {
+  replacements: { age: 30 },
+  type: QueryTypes.SELECT
+}).then(users => {
+  console.log(users);
+});
+```
+
+### 7. 性能优化
+随着应用的增长，性能优化变得至关重要。你可以通过索引、缓存策略、批量操作等方式来优化 Sequelize 应用的性能。
+
+- **索引**：为频繁查询的字段添加索引可以显著提高查询速度。
+- **缓存**：利用内存缓存（如 Redis）存储频繁访问的数据。
+- **批量操作**：尽量减少与数据库的交互次数，比如使用批量插入和更新。
+
+### 8. 插件和扩展
+Sequelize 社区提供了丰富的插件和扩展，可以增强其功能，例如支持软删除、审计日志等。
+
+### 9. 日志记录
+Sequelize 允许你自定义日志记录行为，以便更好地调试和监控应用。
+
+```javascript
+const sequelize = new Sequelize('database', 'username', 'password', {
+  logging: console.log
+});
+```
+
+### 10. 异步/等待（Async/Await）
+利用 JavaScript 的异步编程模式（async/await），可以使代码更加清晰易读，尤其是在处理多个异步操作时。
+
+```javascript
+async function createUser() {
+  try {
+    const user = await User.create({ name: 'John Doe' });
+    console.log(user);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+掌握上述进阶概念和技巧，可以帮助你在使用 Sequelize 构建复杂的应用程序时更加得心应手。

@@ -141,6 +141,92 @@ print(r.hgetall('user:1000'))  # 输出: {b'name': b'Alice', b'age': b'25'}
 
 以上只是Redis功能的一小部分展示。根据实际需求，你可以利用更多高级特性如事务处理、发布/订阅模型等。对于更复杂的应用场景，建议参考官方文档以获取详细信息和支持。
 
+## 示例
+
+为了提供一个完整的示例，我们将构建一个简单的Web应用，该应用使用Redis作为缓存层来提高性能。我们将使用Python的Flask框架来创建Web服务，并使用`redis-py`库与Redis进行交互。这个示例将包括以下几个部分：
+
+1. **安装必要的库**。
+2. **设置Redis服务器**。
+3. **编写Flask应用**。
+4. **使用Redis缓存数据**。
+
+### 1. 安装必要的库
+
+首先，确保你已经安装了Python和pip。然后，安装Flask和redis-py库：
+
+```bash
+pip install Flask redis
+```
+
+### 2. 设置Redis服务器
+
+确保你的Redis服务器正在运行。你可以通过以下命令启动Redis服务器（如果你还没有安装Redis，请先安装）：
+
+```bash
+redis-server
+```
+
+默认情况下，Redis监听在6379端口上。如果需要更改配置，可以编辑`redis.conf`文件。
+
+### 3. 编写Flask应用
+
+接下来，我们创建一个简单的Flask应用。这个应用有一个路由，它会从Redis中获取数据，如果数据不存在，则生成数据并存储到Redis中，然后返回给客户端。
+
+创建一个名为`app.py`的文件，并添加以下内容：
+
+```python
+from flask import Flask, jsonify
+import redis
+import time
+
+# 初始化Flask应用
+app = Flask(__name__)
+
+# 连接到Redis
+cache = redis.Redis(host='localhost', port=6379, db=0)
+
+# 模拟耗时操作
+def get_expensive_data():
+    print("Computing expensive data...")
+    time.sleep(2)  # 模拟耗时计算
+    return {"data": "This is some expensive data"}
+
+@app.route('/data')
+def get_data():
+    # 尝试从Redis缓存中获取数据
+    cached_data = cache.get('expensive_data')
+    
+    if cached_data is not None:
+        # 如果数据存在，直接返回
+        return jsonify({"cached": True, "data": cached_data.decode()})
+    else:
+        # 如果数据不存在，计算数据并保存到Redis
+        data = get_expensive_data()
+        cache.setex('expensive_data', 60, str(data))  # 设置过期时间为60秒
+        return jsonify({"cached": False, "data": data})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+### 4. 使用Redis缓存数据
+
+在这个示例中，我们定义了一个`get_expensive_data`函数，它模拟了一个耗时的操作。我们在`/data`路由中尝试从Redis缓存中获取数据；如果数据不存在，就调用`get_expensive_data`函数来生成数据，并将其保存到Redis中，同时设置一个过期时间（例如60秒）。
+
+### 运行应用
+
+现在，你可以运行这个Flask应用：
+
+```bash
+python app.py
+```
+
+打开浏览器或使用curl命令访问`http://localhost:5000/data`，第一次请求将会等待2秒后返回结果，因为数据需要被计算并存储到Redis中。随后的请求将在60秒内立即返回，直到缓存过期。
+
+
+
+这个示例展示了如何使用Redis作为缓存层来加速Web应用的数据响应速度。通过这种方式，我们可以显著减少对数据库或其他资源的频繁访问，从而提高整体性能。
+
 ## 进阶
 
 Redis的进阶使用涉及到更复杂的数据结构操作、事务处理、持久化配置、主从复制及集群部署等方面。下面我将详细介绍这些方面的内容。
@@ -244,91 +330,6 @@ Redis的高级功能使得它不仅仅是一个简单的键值存储系统，而
 
 这些高级功能让Redis成为了一个非常灵活且强大的工具，适用于各种不同的场景，从简单的缓存到复杂的实时数据分析。对于需要高性能、低延迟的应用来说，Redis是一个很好的选择。
 
-## 完整示例
-
-为了提供一个完整的示例，我们将构建一个简单的Web应用，该应用使用Redis作为缓存层来提高性能。我们将使用Python的Flask框架来创建Web服务，并使用`redis-py`库与Redis进行交互。这个示例将包括以下几个部分：
-
-1. **安装必要的库**。
-2. **设置Redis服务器**。
-3. **编写Flask应用**。
-4. **使用Redis缓存数据**。
-
-### 1. 安装必要的库
-
-首先，确保你已经安装了Python和pip。然后，安装Flask和redis-py库：
-
-```bash
-pip install Flask redis
-```
-
-### 2. 设置Redis服务器
-
-确保你的Redis服务器正在运行。你可以通过以下命令启动Redis服务器（如果你还没有安装Redis，请先安装）：
-
-```bash
-redis-server
-```
-
-默认情况下，Redis监听在6379端口上。如果需要更改配置，可以编辑`redis.conf`文件。
-
-### 3. 编写Flask应用
-
-接下来，我们创建一个简单的Flask应用。这个应用有一个路由，它会从Redis中获取数据，如果数据不存在，则生成数据并存储到Redis中，然后返回给客户端。
-
-创建一个名为`app.py`的文件，并添加以下内容：
-
-```python
-from flask import Flask, jsonify
-import redis
-import time
-
-# 初始化Flask应用
-app = Flask(__name__)
-
-# 连接到Redis
-cache = redis.Redis(host='localhost', port=6379, db=0)
-
-# 模拟耗时操作
-def get_expensive_data():
-    print("Computing expensive data...")
-    time.sleep(2)  # 模拟耗时计算
-    return {"data": "This is some expensive data"}
-
-@app.route('/data')
-def get_data():
-    # 尝试从Redis缓存中获取数据
-    cached_data = cache.get('expensive_data')
-    
-    if cached_data is not None:
-        # 如果数据存在，直接返回
-        return jsonify({"cached": True, "data": cached_data.decode()})
-    else:
-        # 如果数据不存在，计算数据并保存到Redis
-        data = get_expensive_data()
-        cache.setex('expensive_data', 60, str(data))  # 设置过期时间为60秒
-        return jsonify({"cached": False, "data": data})
-
-if __name__ == '__main__':
-    app.run(debug=True)
-```
-
-### 4. 使用Redis缓存数据
-
-在这个示例中，我们定义了一个`get_expensive_data`函数，它模拟了一个耗时的操作。我们在`/data`路由中尝试从Redis缓存中获取数据；如果数据不存在，就调用`get_expensive_data`函数来生成数据，并将其保存到Redis中，同时设置一个过期时间（例如60秒）。
-
-### 运行应用
-
-现在，你可以运行这个Flask应用：
-
-```bash
-python app.py
-```
-
-打开浏览器或使用curl命令访问`http://localhost:5000/data`，第一次请求将会等待2秒后返回结果，因为数据需要被计算并存储到Redis中。随后的请求将在60秒内立即返回，直到缓存过期。
-
-
-
-这个示例展示了如何使用Redis作为缓存层来加速Web应用的数据响应速度。通过这种方式，我们可以显著减少对数据库或其他资源的频繁访问，从而提高整体性能。
 
 ## 数据结构
 

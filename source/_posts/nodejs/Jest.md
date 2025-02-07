@@ -155,70 +155,6 @@ describe('Math functions', () => {
 
 这只是一个非常基础的介绍。希望这些信息能帮助你理解如何开始使用 Jest。
 
-## 进阶
-
-对于已经熟悉 Jest 基础的开发者，进阶介绍可以涵盖更复杂的特性和最佳实践，帮助你更加高效和灵活地使用 Jest 进行测试。以下是关于 Jest 的一些高级主题和技巧：
-
-### 1. **自定义匹配器（Custom Matchers）**
-
-Jest 内置了许多有用的匹配器，但有时你可能需要创建自己的匹配器来满足特定的需求。你可以通过 `expect.extend` 方法添加自定义匹配器。
-
-```javascript
-expect.extend({
-  toBeWithinRange(received, floor, ceiling) {
-    const pass = received >= floor && received <= ceiling;
-    if (pass) {
-      return {
-        message: () => `expected ${received} not to be within range ${floor} - ${ceiling}`,
-        pass: true,
-      };
-    } else {
-      return {
-        message: () => `expected ${received} to be within range ${floor} - ${ceiling}`,
-        pass: false,
-      };
-    }
-  },
-});
-```
-
-### 2. **Mock 函数与模块**
-
-- **手动 Mock**：你可以为模块或函数编写自己的 mock 实现。
-- **自动 Mock**：Jest 可以自动 mock 模块，这对于测试时隔离依赖非常有用。
-- **Spying on Functions**：使用 `jest.spyOn` 来监控函数调用，而不改变其行为。
-
-```javascript
-const myModule = require('./myModule');
-jest.spyOn(myModule, 'myFunction').mockReturnValue('mocked value');
-```
-
-### 3. **异步代码测试**
-
-- 使用 `async/await` 或 `.then()` 测试 Promises。
-- 使用 `done` 回调确保异步操作完成。
-
-```javascript
-test('the data is peanut butter', async () => {
-  await fetchData();
-  expect(data).toBe('peanut butter');
-});
-```
-
-### 4. **快照测试优化**
-
-- 快照更新策略：了解如何安全地更新快照，避免不必要的变更。
-- 使用 `toMatchSnapshot` 的选项参数，例如 `only` 和 `updateSnapshot`。
-
-```javascript
-expect(component.toJSON()).toMatchSnapshot({ mode: 'deep' });
-```
-
-### 5. **CI/CD 集成**
-
-- 设置持续集成管道中的 Jest 测试。
-- 使用 Jest 的覆盖率报告生成工具，并将其集成到 CI 管道中，确保代码质量。
-
 ## 示例
 
 下面是一个使用 Jest 进行单元测试的完整示例，包括配置、测试代码和被测函数。我们将创建一个简单的 JavaScript 模块，并为其编写测试用例。
@@ -359,6 +295,71 @@ Time:        1.234s
 ```
 
 这个例子展示了如何为一个简单的计算器模块编写单元测试。你可以根据自己的项目需求扩展这些测试，比如添加更复杂的逻辑、异步操作或者集成测试等。
+
+## 进阶
+
+对于已经熟悉 Jest 基础的开发者，进阶介绍可以涵盖更复杂的特性和最佳实践，帮助你更加高效和灵活地使用 Jest 进行测试。以下是关于 Jest 的一些高级主题和技巧：
+
+### 1. **自定义匹配器（Custom Matchers）**
+
+Jest 内置了许多有用的匹配器，但有时你可能需要创建自己的匹配器来满足特定的需求。你可以通过 `expect.extend` 方法添加自定义匹配器。
+
+```javascript
+expect.extend({
+  toBeWithinRange(received, floor, ceiling) {
+    const pass = received >= floor && received <= ceiling;
+    if (pass) {
+      return {
+        message: () => `expected ${received} not to be within range ${floor} - ${ceiling}`,
+        pass: true,
+      };
+    } else {
+      return {
+        message: () => `expected ${received} to be within range ${floor} - ${ceiling}`,
+        pass: false,
+      };
+    }
+  },
+});
+```
+
+### 2. **Mock 函数与模块**
+
+- **手动 Mock**：你可以为模块或函数编写自己的 mock 实现。
+- **自动 Mock**：Jest 可以自动 mock 模块，这对于测试时隔离依赖非常有用。
+- **Spying on Functions**：使用 `jest.spyOn` 来监控函数调用，而不改变其行为。
+
+```javascript
+const myModule = require('./myModule');
+jest.spyOn(myModule, 'myFunction').mockReturnValue('mocked value');
+```
+
+### 3. **异步代码测试**
+
+- 使用 `async/await` 或 `.then()` 测试 Promises。
+- 使用 `done` 回调确保异步操作完成。
+
+```javascript
+test('the data is peanut butter', async () => {
+  await fetchData();
+  expect(data).toBe('peanut butter');
+});
+```
+
+### 4. **快照测试优化**
+
+- 快照更新策略：了解如何安全地更新快照，避免不必要的变更。
+- 使用 `toMatchSnapshot` 的选项参数，例如 `only` 和 `updateSnapshot`。
+
+```javascript
+expect(component.toJSON()).toMatchSnapshot({ mode: 'deep' });
+```
+
+### 5. **CI/CD 集成**
+
+- 设置持续集成管道中的 Jest 测试。
+- 使用 Jest 的覆盖率报告生成工具，并将其集成到 CI 管道中，确保代码质量。
+
 
 ## 注意事项
 
